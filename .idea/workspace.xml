@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a81f9f6d-191d-4240-9cd5-d8a030683b8a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/play_count2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/replace.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/special_class.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/special_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/anchor.html" afterPath="$PROJECT_DIR$/anchor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-    </list>
+    <list default="true" id="a81f9f6d-191d-4240-9cd5-d8a030683b8a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -26,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/special_detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="230" column="67" lean-forward="false" selection-start-line="230" selection-start-column="67" selection-end-line="230" selection-end-column="67" />
+              <caret line="230" column="82" lean-forward="true" selection-start-line="230" selection-start-column="82" selection-end-line="230" selection-end-column="82" />
               <folding>
                 <element signature="e#1704#1710#0" expanded="true" />
                 <element signature="e#1902#1908#0" expanded="true" />
@@ -149,7 +141,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -250,15 +242,15 @@
       <workItem from="1514457199984" duration="16702000" />
       <workItem from="1514517690062" duration="5730000" />
       <workItem from="1514527213225" duration="5291000" />
-      <workItem from="1514532893355" duration="13958000" />
+      <workItem from="1514532893355" duration="13980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71439000" />
+    <option name="totallyTimeSpent" value="71461000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23572475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -576,7 +568,7 @@
     <entry file="file://$PROJECT_DIR$/special_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="230" column="67" lean-forward="false" selection-start-line="230" selection-start-column="67" selection-end-line="230" selection-end-column="67" />
+          <caret line="230" column="82" lean-forward="true" selection-start-line="230" selection-start-column="82" selection-end-line="230" selection-end-column="82" />
           <folding>
             <element signature="e#1704#1710#0" expanded="true" />
             <element signature="e#1902#1908#0" expanded="true" />
