@@ -233,6 +233,72 @@ footer{
     width:0.6rem;
     display: inline;
 }
+
+
+.style-program-list{
+    height:5.63rem;
+    margin: 1rem 0.56rem;
+    background-image: url('../image/special_background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.style-program-list .style-program-list-cover{
+    position:relative;
+    width:5.63rem;
+    height:5.63rem;
+    float: left;
+}
+.style-program-list-cover img{
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.20), inset 0 0 6px 0 rgba(0,0,0,0.30);
+    border-radius: 100%;
+    display: inline;
+    width:70%;
+    height:70%;
+    margin:12%;
+}
+.style-program-list-cover-play img{
+    width:2.57rem;
+    height:2.57rem;
+    border:0;
+    border-radius: 100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+.style-program-list .style-program-list-content{
+    width: 8.63rem;
+    margin: 1rem;
+    float: right;
+}
+.style-program-list-content-title{
+    font-family: PingFangSC-Semibold;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+.style-program-list-content-title .aui-text-right{
+    font-family: PingFangSC-Regular;
+    color: #767676;
+    letter-spacing: 0;
+}
+.style-program-list-content-play{
+    margin-top: 1.3rem;
+    font-family: PingFangSC-Regular;
+    color: #767676;
+    letter-spacing: 0;
+    /*line-height: 1.4rem;*/
+    line-height:1.21rem;
+}
+.style-program-list-content-play img{
+    width:0.6rem;
+    display: inline;
+}
+.style-program-list-content-play span{
+    margin-right: 1.3rem;
+}
 @media (max-width:320px){
     .style-special-list{
         height:4.93rem;
@@ -253,6 +319,28 @@ footer{
     .style-special-list-content-play{
         line-height: 1rem;
     }
+
+    .style-program-list{
+        height:4.93rem;
+        margin: 1rem 0.56rem;
+    }
+    .style-program-list .style-program-list-cover{
+        width:4.93rem;
+        height:4.93rem;
+    }
+    .style-program-list-cover-play img{
+        top:1.18rem;
+        bottom:1.18rem;
+        left:1.18rem;
+        right:1.18rem;
+    }
+    .style-program-list .style-program-list-content{
+        width: 8.63rem;
+        margin: 1rem 0.56rem;
+    }
+    .style-program-list-content-play{
+        margin-top: 1rem;
+    }
 }
 @media (min-width:412px){
     .style-special-list{
@@ -270,6 +358,22 @@ footer{
     .style-special-list-cover span{
         top:13%;
         left:12.8%;
+    }
+    .style-program-list{
+        height:5.93rem;
+        margin: 1rem 0.56rem;
+    }
+    .style-program-list .style-program-list-cover{
+        width:5.93rem;
+        height:5.93rem;
+    }
+    .style-program-list{
+        height:5.93rem;
+        margin: 1rem 0.56rem;
+    }
+    .style-program-list .style-program-list-cover{
+        width:5.93rem;
+        height:5.93rem;
     }
 }
 @media (min-width:768px){
@@ -304,6 +408,29 @@ footer{
         top:13%;
         left:13%;
     }
+    .style-program-list{
+        height:9.75rem;
+        margin: 1rem 0.56rem;
+    }
+    .style-program-list .style-program-list-cover{
+        width:9.63rem;
+        height:9.63rem;
+    }
+    .style-program-list-cover-play img {
+        width: 50%;
+        height: 50%;
+        top:-7px;
+        bottom:0;
+        left:-7px;
+        right:0;
+    }
+    .style-program-list .style-program-list-content{
+        width:15.63rem;
+        margin: 1.5rem;
+    }
+    .style-program-list-content-play{
+        margin-top: 3.2rem;
+    }
 }
 @media (min-width:1024px){
     .style-anchor-photo img{
@@ -336,5 +463,28 @@ footer{
     .style-special-list-cover span{
         top:12.5%;
         left:12.5%;
+    }
+    .style-program-list{
+        height:13.75rem;
+        margin: 1rem 0.56rem;
+    }
+    .style-program-list .style-program-list-cover{
+        width:13.63rem;
+        height:13.63rem;
+    }
+    .style-program-list-cover-play img {
+        width: 50%;
+        height: 50%;
+        top:-9px;
+        bottom:0;
+        left:-9px;
+        right:0;
+    }
+    .style-program-list .style-program-list-content{
+        width:20.63rem;
+        margin: 2rem;
+    }
+    .style-program-list-content-play{
+        margin-top: 6.2rem;
     }
 }
