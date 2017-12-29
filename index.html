@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>邀请好友，双方有礼</title>
+    <link rel="stylesheet" type="text/css" href="./css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <style>
+
+    </style>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn">
+        <span class="style-back-icon">
+            <img src="image/back.png" />
+        </span>
+    </a>
+    <div class="aui-title">邀请好友，双方有礼</div>
+</header>
+<section class="aui-content-padded">
+    <div class="style-content-image" id="image">
+        <img src="./image/set.png" />
+    </div>
+    <span  class="style-frame" id="data"></span >
+    <button class="aui-btn aui-btn-danger aui-btn-block" id="button"  data-clipboard-action="copy" data-clipboard-target="#data">复制邀请码</button>
+</section>
+<div style="height:4.16rem;"></div>
+<footer id="footer">
+    <div class="aui-tips aui-row" onclick="download()">
+        <div class="aui-col-xs-2">
+            <img src="./image/app.png" />
+        </div>
+        <div class="aui-col-xs-5">
+            <div class="style-text-14">美景听听App</div>
+            <div class="style-text-12">让旅行更有内涵</div>
+        </div>
+        <div class="aui-col-xs-5 style-text-open">
+            <img src="./image/open.png" />
+        </div>
+    </div>
+</footer>
+</body>
+<script type="text/javascript" src="./script/clipboard.min.js"></script>
+<script type="text/javascript" src="./script/jquery.min.js"></script>
+<script type="text/javascript" src="./script/api.js" ></script>
+<script type="text/javascript" src="./script/aui-toast.js" ></script>
+<script type="text/javascript">
+
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    var invitationCode ="";
+    $(function(){
+        $("#image").click(function(){
+            $("#footer").hide();
+        })
+
+        invitationCode = getQueryString("invitationCode");
+        if(invitationCode!=null){
+            $("#data").text(invitationCode);
+        }else {
+            $("#data").text("获取邀请码失败");
+        }
+    });
+    var toast = new auiToast({})
+    $("#button").click(function(){
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { //ios
+            var copyDOM = document.querySelector('#data');  //要复制文字的节点
+            var range = document.createRange();
+            // 选中需要复制的节点
+            range.selectNode(copyDOM);
+            // 执行选中元素
+            window.getSelection().addRange(range);
+            // 执行 copy 操作
+            var successful = document.execCommand('copy');
+            try {
+                if(successful){
+                    toast.success({
+                        title:"已复制到剪切板",
+                        duration:2000
+                    });
+                }
+                else{
+                    toast.fail({
+                        title:"复制失败，请手动选择复制",
+                        duration:2000
+                    });
+                }
+
+                $("#footer").show();
+            } catch(err) {
+                console.log('Oops, unable to copy');
+            }
+            // 移除选中的元素
+            window.getSelection().removeAllRanges();
+        }else{
+            var clipboard = new Clipboard('#button');
+
+            clipboard.on('success', function(e) {
+                console.log(e);
+
+                $("#footer").show();
+            });
+
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+
+        }
+    });
+
+    function download(){
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+            $(location).attr('href', 'https://itunes.apple.com/cn/app/%E7%BE%8E%E6%99%AF%E5%90%AC%E5%90%AC-%E5%85%A8%E7%90%83%E6%99%AF%E7%82%B9%E8%AE%B2%E8%A7%A3%E8%AF%AD%E9%9F%B3%E5%AF%BC%E6%B8%B8/id945386876?mt=8');
+        }
+        else{
+            $(location).attr('href','http://a.app.qq.com/o/simple.jsp?pkgname=com.tommy.mjtt_an_pro&channel=0002160650432d595942&fromcase=60001')
+        }
+    }
+
+</script>
+</html>
