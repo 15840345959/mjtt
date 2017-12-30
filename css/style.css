@@ -1,3 +1,15 @@
+.style-font-bold{
+    font-weight: bold;
+}
+.style-float-left{
+    float:left;
+}
+.style-float-right{
+    float:right;
+}
+.style-margin-center{
+    margin:0 auto;
+}
 .style-back-icon img{
     width:1.4rem;
     height:1.26rem;
@@ -124,12 +136,13 @@ footer{
     letter-spacing: 0.65px;
     line-height: 22px;
     margin-top: 2rem;
+    font-weight: bold;
 }
 .style-anchor-introduction{
     font-family: PingFangSC-Regular;
     color: #767676;
     letter-spacing: 0.07rem;
-    line-height: 1.57rem;
+    line-height: 1.3rem;
     position: relative;
     margin: 0.5rem 1.25rem;
 }
@@ -156,6 +169,7 @@ footer{
     color: #E31C17;
     letter-spacing: 1px;
     border-bottom: 2px solid #E31C17;
+    font-weight: bold;
 }
 .aui-tab-item{
     font-family: PingFangSC-Semibold;
@@ -163,16 +177,18 @@ footer{
     letter-spacing: 1px;
     width:29%;
     margin-left: 16%;
+    font-weight: bold;
 }
 .aui-tab{
     border-bottom: 1px solid #EBEBEB;
+    margin:0 0.56rem;
 }
 .style-lists{
     background: #fff;
 }
 .style-special-list{
     height:5.63rem;
-    margin: 1rem 0.56rem;
+    margin: 0.4rem 0.56rem;
     background-image: url('../image/special_background.png');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -197,7 +213,7 @@ footer{
     width:2.07rem;
     height:1rem;
     text-align: center;
-    border-radius: 5px 0 5px 0;
+    border-radius: 5px 0 15px 0;
     font-family: PingFangSC-Semibold;
     color: #FFFFFF;
     letter-spacing: 0.04rem;
@@ -215,13 +231,13 @@ footer{
     font-family: PingFangSC-Semibold;
     color: #000000;
     letter-spacing: 0.5px;
+    font-weight: bold;
 }
 .style-special-list-content-introduction{
     font-family: PingFangSC-Regular;
     color: #767676;
     letter-spacing: 0;
-    /*line-height: 1.4rem;*/
-    line-height:1.21rem;
+    line-height:1.5rem;
 }
 .style-special-list-content-play{
     font-family: PingFangSC-Regular;
@@ -233,12 +249,13 @@ footer{
 .style-special-list-content-play img{
     width:0.6rem;
     display: inline;
+    margin-right: 4px;
 }
 
 
 .style-program-list{
     height:5.63rem;
-    margin: 1rem 0.56rem;
+    margin: 0.4rem 0.56rem;
     background-image: url('../image/special_background.png');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -271,7 +288,7 @@ footer{
     margin:auto;
 }
 .style-program-list .style-program-list-content{
-    width: 8.63rem;
+    width: 9rem;
     margin: 1rem;
     float: right;
 }
@@ -279,10 +296,12 @@ footer{
     font-family: PingFangSC-Semibold;
     color: #000000;
     letter-spacing: 0.5px;
+    font-weight: bold;
 }
 .style-program-list-content-title .aui-text-right{
     font-family: PingFangSC-Regular;
-    color: #767676;
+    /*color: #767676;*/
+    color:#B6B6B6;
     letter-spacing: 0;
 }
 .style-program-list-content-play{
@@ -296,19 +315,20 @@ footer{
 .style-program-list-content-play img{
     width:0.6rem;
     display: inline;
+    margin-right:4px;
 }
 .style-program-list-content-play span{
     margin-right: 1.3rem;
 }
 
 .style-anchor-special-detail-cover .style-anchor-special-detail-cover-img{
-    width:4.5rem;
-    height:4.5rem;
+    width:5.5rem;
+    height:5.5rem;
     border: 2px solid #FFFFFF;
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.20), inset 0 0 6px 0 rgba(0,0,0,0.30);
     border-radius: 6px;
     position:absolute;
-    top:4.5rem;
+    top:3.5rem;
     bottom:0;
     left:0;
     right:0;
@@ -319,15 +339,15 @@ footer{
     width:2.07rem;
     height:1rem;
     text-align: center;
-    border-radius: 5px 0 5px 0;
+    border-radius: 5px 0 15px 0;
     font-family: PingFangSC-Semibold;
     color: #FFFFFF;
     letter-spacing: 0.04rem;
     line-height: 1rem;
     position:absolute;
-    top:1.02rem;
+    top:-0.98rem;
     bottom:0;
-    left:-2.4rem;
+    left:-3.4rem;
     right:0;
     margin:auto;
 }
@@ -336,7 +356,7 @@ footer{
     width:3.07rem;
     height:1rem;
     text-align: center;
-    border-radius: 0 5px 0 5px;
+    border-radius: 0 15px 0 5px;
     font-family: PingFangSC-Semibold;
     color: #FFFFFF;
     letter-spacing: 0.04rem;
@@ -344,7 +364,7 @@ footer{
     position:absolute;
     top:8rem;
     bottom:0;
-    left:-1.4rem;
+    left:-2.4rem;
     right:0;
     margin:auto;
 }
@@ -357,7 +377,8 @@ footer{
     display: inline;
 }
 .style-program{
-    margin-top: -1rem;
+    margin-top: -0.5rem;
+    padding-bottom: 0.5rem;
 }
 .style-special-header-photo{
     font-family: PingFangSC-Regular;
@@ -370,11 +391,14 @@ footer{
 .style-special-header-photo img{
     vertical-align: middle;
     display: inline;
-    width:1.79rem;
-    height:1.79rem;
+    width:1.3rem;
+    height:1.3rem;
     border: 2px solid #FFFFFF;
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.20), inset 0 0 6px 0 rgba(0,0,0,0.30);
     border-radius: 100%;
+}
+.style-special-header-photo p{
+    color:#000000;
 }
 .style-special-header-photo span{
     display:inline-block;
@@ -386,6 +410,9 @@ footer{
     letter-spacing: 0;
     height: 1rem;
     line-height: 1rem;
+}
+.style-special-header-class p{
+    color:#000000;
 }
 .style-special-header-class img{
     vertical-align: middle;
@@ -403,6 +430,7 @@ footer{
     color: #000000;
     letter-spacing: 0.04rem;
     line-height: 2rem;
+    margin:0 0.56rem;
 }
 .aui-card-list-header .style-replace{
     font-family: PingFangSC-Semibold;
@@ -414,38 +442,81 @@ footer{
     display: inline;
 }
 
-
+.style-replace-special-margin{
+    margin: 0 0.56rem;
+}
 .style-replace-special-list .style-special-list-cover{
     position:relative;
     width:5.63rem;
     height:5.63rem;
-    float: left;
+    /*float: left;*/
 }
 .style-replace-special-list .style-special-list-cover img{
     border: 2px solid #FFFFFF;
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.20), inset 0 0 6px 0 rgba(0,0,0,0.30);
     border-radius: 6px;
     display: inline;
-    width:80%;
-    height:80%;
-    margin:12%;
+    width:90%;
+    height:90%;
 }
-.style-replace-special-list .style-special-list-cover span{
+/*.style-replace-special-list .style-special-list-cover span{*/
+    /*background: rgba(0,0,0,0.60);*/
+    /*width:2.07rem;*/
+    /*height:1rem;*/
+    /*text-align: center;*/
+    /*border-radius: 5px 0 15px 0;*/
+    /*font-family: PingFangSC-Semibold;*/
+    /*color: #FFFFFF;*/
+    /*letter-spacing: 0.04rem;*/
+    /*line-height: 1rem;*/
+    /*position:absolute;*/
+    /*top:14%;*/
+    /*left:14%;*/
+/*}*/
+.style-replace-special-list .style-replace-special-list-text-left span{
     background: rgba(0,0,0,0.60);
     width:2.07rem;
     height:1rem;
     text-align: center;
-    border-radius: 5px 0 5px 0;
+    border-radius: 5px 0 15px 0;
     font-family: PingFangSC-Semibold;
     color: #FFFFFF;
     letter-spacing: 0.04rem;
     line-height: 1rem;
     position:absolute;
-    top:14%;
-    left:14%;
+    top:2%;
+    left:2%;
+}
+.style-replace-special-list .style-replace-special-list-text-center span{
+    background: rgba(0,0,0,0.60);
+    width:2.07rem;
+    height:1rem;
+    text-align: center;
+    border-radius: 5px 0 15px 0;
+    font-family: PingFangSC-Semibold;
+    color: #FFFFFF;
+    letter-spacing: 0.04rem;
+    line-height: 1rem;
+    position:absolute;
+    top:2%;
+    left:5%;
+}
+.style-replace-special-list .style-replace-special-list-text-right span{
+    background: rgba(0,0,0,0.60);
+    width:2.07rem;
+    height:1rem;
+    text-align: center;
+    border-radius: 5px 0 15px 0;
+    font-family: PingFangSC-Semibold;
+    color: #FFFFFF;
+    letter-spacing: 0.04rem;
+    line-height: 1rem;
+    position:absolute;
+    top:2%;
+    left:8%;
 }
 .style-replace-special-list p{
-    width:80%;
+    width:90%;
     margin:0 auto;
     font-family: PingFangSC-Semibold;
     color: #000000;
@@ -494,11 +565,37 @@ footer{
     .style-program-list-content-play{
         margin-top: 1rem;
     }
+    .style-replace-special-list .style-special-list-cover img{
+        display: block;
+        width:80%;
+        height:80%;
+    }
+    .style-replace-special-list p{
+        width:80%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-center span{
+        left:2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-right span{
+        left:2%;
+    }
+    .style-replace-special-list-text-right{
+        text-align: left !important;
+    }
+    .style-replace-special-list-float-right{
+        float:left;
+    }
+    .style-replace-special-list-text-center{
+        text:left;
+    }
+    .style-replace-special-list-margin-center{
+        float:left;
+    }
 }
 @media (min-width:412px){
     .style-special-list{
         height:5.93rem;
-        margin: 1rem 0.56rem;
+        margin: 0.4rem 0.56rem;
     }
     .style-special-list .style-special-list-cover{
         width:5.93rem;
@@ -510,19 +607,11 @@ footer{
     }
     .style-special-list .style-special-list-cover span{
         top:13%;
-        left:12.8%;
+        left:13.8%;
     }
     .style-program-list{
         height:5.93rem;
-        margin: 1rem 0.56rem;
-    }
-    .style-program-list .style-program-list-cover{
-        width:5.93rem;
-        height:5.93rem;
-    }
-    .style-program-list{
-        height:5.93rem;
-        margin: 1rem 0.56rem;
+        margin: 0.4rem 0.56rem;
     }
     .style-program-list .style-program-list-cover{
         width:5.93rem;
@@ -535,6 +624,16 @@ footer{
         width:0.6rem;
         height:0.6rem;
         display: inline;
+    }
+    .style-replace-special-list .style-special-list-cover img{
+        width:100%;
+        height:100%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-center span{
+        left:2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-right span{
+        left:2%;
     }
 }
 @media (min-width:768px){
@@ -564,6 +663,8 @@ footer{
         white-space: normal !important;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        line-height: 1.2rem;
+        margin-bottom: 1rem;
     }
     .style-special-list .style-special-list-cover span{
         top:13%;
@@ -593,18 +694,18 @@ footer{
         margin-top: 3.2rem;
     }
     .style-anchor-special-detail-cover .style-anchor-special-detail-cover-img{
-        width:5rem;
-        height:5rem;
-        top:7.5rem;
+        width:6rem;
+        height:6rem;
+        top:6.5rem;
     }
 
     .style-anchor-special-detail-cover-count{
-        top:3.52rem;
-        left:-2.85rem;
+        top:1.52rem;
+        left:-3.85rem;
     }
     .style-anchor-special-detail-cover-play{
         top:11.5rem;
-        left:-1.85rem;
+        left:-2.85rem;
     }
     .style-anchor-special-detail-cover-play img{
         border:0;
@@ -618,9 +719,25 @@ footer{
         width: 9.63rem;
         height: 9.63rem;
     }
-    .style-replace-special-list .style-special-list-cover span{
-        top: 13%;
-        left: 13%;
+    /*.style-replace-special-list .style-special-list-cover span{*/
+        /*top: 13%;*/
+        /*left: 13%;*/
+    /*}*/
+    .style-replace-special-list .style-replace-special-list-text-left span{
+        top:1%;
+        left:1%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-center span{
+        top:1%;
+        left:5.5%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-right span{
+        top:1%;
+        left:9.5%;
+    }
+    .style-replace-special-list .style-special-list-cover img{
+        width:90%;
+        height:90%;
     }
 }
 @media (min-width:1024px){
@@ -650,6 +767,7 @@ footer{
         white-space: normal !important;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
+        margin-top: 1rem;
     }
     .style-special-list .style-special-list-cover span{
         top:12.5%;
@@ -679,18 +797,18 @@ footer{
         margin-top: 6.2rem;
     }
     .style-anchor-special-detail-cover .style-anchor-special-detail-cover-img{
-        width:7rem;
-        height:7rem;
-        top:9.5rem;
+        width:8rem;
+        height:8rem;
+        top:8.5rem;
     }
 
     .style-anchor-special-detail-cover-count{
-        top:3.52rem;
-        left:-4.85rem;
+        top:1.52rem;
+        left:-5.85rem;
     }
     .style-anchor-special-detail-cover-play{
         top:15.5rem;
-        left:-3.85rem;
+        left:-4.85rem;
     }
     .style-anchor-special-detail-cover-play img{
         border:0;
@@ -704,9 +822,28 @@ footer{
         width: 12.63rem;
         height: 12.63rem;
     }
-    .style-replace-special-list .style-special-list-cover span{
-        top: 13%;
-        left: 13%;
+    /*.style-replace-special-list .style-special-list-cover span{*/
+        /*top: 13%;*/
+        /*left: 13%;*/
+    /*}*/
+    .style-replace-special-list .style-replace-special-list-text-left span{
+        top:0.7%;
+        left:0.7%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-center span{
+        top:1%;
+        left:2.5%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-right span{
+        top:1%;
+        left:4.5%;
+    }
+    .style-replace-special-list .style-special-list-cover img{
+        width:95%;
+        height:95%;
+    }
+    .style-replace-special-list p{
+        width:95%;
     }
 }
 .aui-grid [class*=aui-col-]{
