@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>主播详情</title>
     <link rel="stylesheet" type="text/css" href="./css/aui.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
@@ -13,14 +14,6 @@
     </style>
 </head>
 <body>
-<!--<header class="aui-bar aui-bar-nav">-->
-    <!--<a class="aui-pull-left aui-btn">-->
-        <!--<span class="style-back-icon">-->
-            <!--<img src="image/back.png" />-->
-        <!--</span>-->
-    <!--</a>-->
-    <!--<div class="aui-title">邀请好友，双方有礼</div>-->
-<!--</header>-->
 
 <div class="aui-card-list style-anchor-header-list">
     <div class="aui-card-list-content style-anchor-header">
@@ -32,7 +25,7 @@
     <div class="aui-card-list-content style-acnchor-nickname aui-font-size-16 aui-text-center">
         老马
     </div>
-    <div class="style-anchor-introduction aui-font-size-14 aui-ellipsis-3">
+    <div class="style-anchor-introduction aui-font-size-14" id="anchor_introduction">
         在美国混迹多年的旅游达人
         留学、租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、
         租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、
@@ -189,8 +182,6 @@
     </div>
     <div id="anchor_program" hidden>
         <audio controls="controls" loop id="player" hidden>
-            <!--<source src="./media/2.mp3" type="audio/ogg">-->
-            <!--<source src="./media/1.mp3" type="audio/mpeg">-->
         </audio>
         <div class="style-program-list">
             <div class="style-program-list-cover" id="program_play_1" audio-index="http://oysd3pbqr.bkt.clouddn.com/%E9%99%88%E4%B8%80%E5%8F%91%E5%84%BF%20-%20%E7%AB%A5%E8%AF%9D%E9%95%87.mp3" onclick="playMusic(1)">
@@ -275,8 +266,8 @@
             <img src="./image/app.png" />
         </div>
         <div class="aui-col-xs-5">
-            <div class="style-text-14">美景听听App</div>
-            <div class="style-text-12">让旅行更有内涵</div>
+            <div class="aui-font-size-14 aui-margin-l-5">美景听听App</div>
+            <div class="aui-font-size-12 aui-margin-l-5">让旅行更有内涵</div>
         </div>
         <div class="aui-col-xs-5 style-text-open">
             <img src="./image/open.png" />
@@ -291,10 +282,33 @@
 <script type="text/javascript" src="./script/common.js" ></script>
 <script type="text/javascript">
     $(function(){
+        var anchor_introduction_all=$("#anchor_introduction").text();
+        var win_width=$(window).width();
+        if(win_width>=375&&win_width<412){
+            if (GetLength($("#anchor_introduction").text()) > 80) {
+                $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 80));
+            }
+        }
+        else if(win_width>=412&&win_width<=414){
+            if (GetLength($("#anchor_introduction").text()) > 120) {
+                $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 120));
+            }
+        }
+        else{
+            if (GetLength($("#anchor_introduction").text()) > 100) {
+                $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 100));
+            }
+        }
+
         $('#more').click(function(){
-            $('.aui-ellipsis-3').removeClass('aui-ellipsis-3');
+//            $('.aui-ellipsis-3').removeClass('aui-ellipsis-3');
+            $("#anchor_introduction").text(anchor_introduction_all);
             $('#more').hide();
         })
+//        $('#more').click(function(){
+//            $('.aui-ellipsis-3').removeClass('aui-ellipsis-3');
+//            $('#more').hide();
+//        })
     })
     var tab = new auiTab({
         element:document.getElementById("tab"),

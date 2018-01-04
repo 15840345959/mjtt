@@ -83,11 +83,11 @@
     letter-spacing: 0;
 }
 .aui-tips{
-    padding: 0.43rem 1.43rem;
+    padding: 0.43rem 0.43rem 0.8rem 0.43rem;
     width: auto;
     z-index: 99;
     line-height: 1.21rem;
-    height:3.43rem;
+    height:2.5rem;
     position: relative;
     background-color: rgba(0,0,0,.6);
     color: #ffffff;
@@ -134,7 +134,7 @@ footer{
     font-family: PingFangSC-Semibold;
     color: #000000;
     letter-spacing: 0.65px;
-    line-height: 22px;
+    /*line-height: 1.5rem;*/
     margin-top: 2rem;
     font-weight: bold;
 }
@@ -163,6 +163,7 @@ footer{
     text-align: right;
     display: block;
     min-height: 0;
+    margin: -2.2rem 0.8rem 0 0;
 }
 .aui-tab-item.aui-active{
     font-family: PingFangSC-Semibold;
@@ -223,8 +224,8 @@ footer{
     left:14%;
 }
 .style-special-list .style-special-list-content{
-    width: 9.63rem;
-    margin: 1rem 0.56rem;
+    width: 10.05rem;
+    margin: 0.6rem 0.56rem 1rem 0;
     float: right;
 }
 .style-special-list-content-title{
@@ -237,7 +238,7 @@ footer{
     font-family: PingFangSC-Regular;
     color: #767676;
     letter-spacing: 0;
-    line-height:1.5rem;
+    line-height:1.9rem;
 }
 .style-special-list-content-play{
     font-family: PingFangSC-Regular;
@@ -276,20 +277,20 @@ footer{
     margin:12%;
 }
 .style-program-list-cover-play img{
-    width:2.57rem;
-    height:2.57rem;
+    width:2rem;
+    height:2rem;
     border:0;
     border-radius: 100%;
     position:absolute;
-    top:0;
+    top:-1%;
     bottom:0;
-    left:0;
+    left:-1%;
     right:0;
     margin:auto;
 }
 .style-program-list .style-program-list-content{
-    width: 9rem;
-    margin: 1rem;
+    width: 9.2rem;
+    margin: 0.8rem 1.56rem 1rem 0;
     float: right;
 }
 .style-program-list-content-title{
@@ -305,7 +306,7 @@ footer{
     letter-spacing: 0;
 }
 .style-program-list-content-play{
-    margin-top: 1.3rem;
+    margin-top: 1.6rem;
     font-family: PingFangSC-Regular;
     color: #767676;
     letter-spacing: 0;
@@ -316,6 +317,7 @@ footer{
     width:0.6rem;
     display: inline;
     margin-right:4px;
+    margin-bottom: -0.06rem;
 }
 .style-program-list-content-play span{
     margin-right: 1.3rem;
@@ -384,8 +386,8 @@ footer{
     font-family: PingFangSC-Regular;
     color: #000000;
     letter-spacing: 0;
-    height: 2rem;
-    line-height: 2rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
     vertical-align: middle;
 }
 .style-special-header-photo img{
@@ -408,8 +410,8 @@ footer{
     font-family: PingFangSC-Regular;
     color: #000000;
     letter-spacing: 0;
-    height: 1rem;
-    line-height: 1rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
 }
 .style-special-header-class p{
     color:#000000;
@@ -430,7 +432,7 @@ footer{
     color: #000000;
     letter-spacing: 0.04rem;
     line-height: 2rem;
-    margin:0 0.56rem;
+    margin:0 0.8rem;
 }
 .aui-card-list-header .style-replace{
     font-family: PingFangSC-Semibold;
@@ -444,6 +446,9 @@ footer{
 
 .style-replace-special-margin{
     margin: 0 0.56rem;
+    padding-top:0.2rem;
+    padding-left:0.2rem;
+    padding-right:0.2rem;
 }
 .style-replace-special-list .style-special-list-cover{
     position:relative;
@@ -451,7 +456,7 @@ footer{
     height:5.63rem;
     /*float: left;*/
 }
-.style-replace-special-list .style-special-list-cover img{
+.style-replace-special-list .style-special-list-cover .style-special-list-cover-image{
     border: 2px solid #FFFFFF;
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.20), inset 0 0 6px 0 rgba(0,0,0,0.30);
     border-radius: 6px;
@@ -475,7 +480,7 @@ footer{
 /*}*/
 .style-replace-special-list .style-replace-special-list-text-left span{
     background: rgba(0,0,0,0.60);
-    width:2.07rem;
+    width:3rem;
     height:1rem;
     text-align: center;
     border-radius: 5px 0 15px 0;
@@ -489,7 +494,7 @@ footer{
 }
 .style-replace-special-list .style-replace-special-list-text-center span{
     background: rgba(0,0,0,0.60);
-    width:2.07rem;
+    width:3rem;
     height:1rem;
     text-align: center;
     border-radius: 5px 0 15px 0;
@@ -503,7 +508,7 @@ footer{
 }
 .style-replace-special-list .style-replace-special-list-text-right span{
     background: rgba(0,0,0,0.60);
-    width:2.07rem;
+    width:3rem;
     height:1rem;
     text-align: center;
     border-radius: 5px 0 15px 0;
@@ -517,13 +522,30 @@ footer{
 }
 .style-replace-special-list p{
     width:90%;
-    margin:0 auto;
+    margin:-0.5rem auto;
     font-family: PingFangSC-Semibold;
     color: #000000;
     letter-spacing: 0;
     text-align: left;
 }
+.style-replace-special-list .style-special-list-cover .style-special-list-cover-play-image{
+    border:0;
+    border-radius: 0;
+    box-shadow:none;
+    width:0.6rem;
+    height:0.6rem;
+    display: inline;
+}
+.style-special-detail-seat{
+    height:3.5rem;
+}
+.footer-text-margin-l-5{
+    margin-left: 0.75rem !important;
+}
 @media (max-width:320px){
+    .aui-tips {
+        padding: 0.43rem;
+    }
     .style-special-list{
         height:4.93rem;
         margin: 1rem 0.56rem;
@@ -534,11 +556,11 @@ footer{
     }
     .style-special-list .style-special-list-content{
         width: 8.63rem;
-        margin: 1rem 0.56rem;
+        margin: 0.6rem 0.86rem 1rem 0;
     }
 
     .style-special-list-content-introduction{
-        line-height: 1rem;
+        line-height: 1.5rem;
     }
     .style-special-list-content-play{
         line-height: 1rem;
@@ -560,24 +582,33 @@ footer{
     }
     .style-program-list .style-program-list-content{
         width: 8.63rem;
-        margin: 1rem 0.56rem;
+        margin: 0.6rem 0.86rem 1rem 0;
     }
     .style-program-list-content-play{
-        margin-top: 1rem;
+        margin-top: 1.3rem;
     }
-    .style-replace-special-list .style-special-list-cover img{
+    .style-replace-special-list .style-special-list-cover .style-special-list-cover-image{
         display: block;
         width:80%;
         height:80%;
     }
     .style-replace-special-list p{
-        width:80%;
+        margin-top:-1rem;
     }
     .style-replace-special-list .style-replace-special-list-text-center span{
         left:2%;
     }
     .style-replace-special-list .style-replace-special-list-text-right span{
         left:2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-left-adjust span{
+        top:1%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-center-adjust span{
+        top:1%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-right-adjust span{
+        top:1%;
     }
     .style-replace-special-list-text-right{
         text-align: left !important;
@@ -591,23 +622,77 @@ footer{
     .style-replace-special-list-margin-center{
         float:left;
     }
+    .style-anchor-footer{
+        margin:-2.2rem 0.4rem 0 0;
+    }
+    .style-special-detail-seat{
+        height:2.7rem;
+    }
+    .footer-text-margin-l-5{
+        margin-left: 0.25rem !important;
+    }
+}
+@media (min-width:375px){
+    .style-special-list .style-special-list-cover img{
+        margin: 14%;
+    }
+    .style-special-list .style-special-list-cover span{
+        top: 16%;
+        left: 16%;
+    }
+    .style-special-list .style-special-list-content{
+        width:10rem;
+        margin: 0.8rem 1.2rem 1rem 0;
+    }
+    .style-program-list .style-program-list-content {
+        width: 10rem;
+        margin: 0.8rem 1.2rem 1rem 0;
+    }
+    .aui-tips{
+        height:2.7rem;
+    }
+    .style-replace-special-list .style-replace-special-list-text-left-adjust span{
+        top:2.2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-center-adjust span{
+        top:2.2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-right-adjust span{
+        top:2.2%;
+    }
+    .style-special-detail-seat{
+        height:3.2rem;
+    }
 }
 @media (min-width:412px){
     .style-special-list{
         height:5.93rem;
         margin: 0.4rem 0.56rem;
     }
+    .style-special-list-content-introduction{
+        line-height: 2rem;
+    }
+    .style-program-list-content-play{
+        margin-top: 1.9rem;
+    }
     .style-special-list .style-special-list-cover{
         width:5.93rem;
         height:5.93rem;
     }
     .style-special-list .style-special-list-content{
-        width:9.63rem;
-        margin: 1rem;
+        width:10.2rem;
+        margin: 0.8rem 1.5rem 1rem 0;
+    }
+    .style-program-list .style-program-list-content{
+        width:10.2rem;
+        margin: 0.8rem 1.5rem 1rem 0;
+    }
+    .style-special-list .style-special-list-cover img{
+        margin: 14%;
     }
     .style-special-list .style-special-list-cover span{
-        top:13%;
-        left:13.8%;
+        top:15%;
+        left:15.8%;
     }
     .style-program-list{
         height:5.93rem;
@@ -625,7 +710,7 @@ footer{
         height:0.6rem;
         display: inline;
     }
-    .style-replace-special-list .style-special-list-cover img{
+    .style-replace-special-list .style-special-list-cover .style-special-list-cover-image{
         width:100%;
         height:100%;
     }
@@ -634,6 +719,27 @@ footer{
     }
     .style-replace-special-list .style-replace-special-list-text-right span{
         left:2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-left-adjust span{
+        top:2.2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-center-adjust span{
+        top:2.2%;
+    }
+    .style-replace-special-list .style-replace-special-list-text-right-adjust span{
+        top:2.2%;
+    }
+    .style-replace-special-list p{
+        margin-top:0.1rem;
+    }
+    .aui-tips{
+        height:2.8rem;
+    }
+    .style-special-detail-seat{
+        height:3.5rem;
+    }
+    .footer-text-margin-l-5{
+        margin-left: 1rem !important;
     }
 }
 @media (min-width:768px){
@@ -651,8 +757,8 @@ footer{
         height:9.63rem;
     }
     .style-special-list .style-special-list-content{
-        width:15.63rem;
-        margin: 1.5rem;
+        width:16.2rem;
+        margin: 1.2rem 2rem 1.5rem 0;
     }
     .style-special-list-content-introduction{
         display: -webkit-box;
@@ -666,9 +772,12 @@ footer{
         line-height: 1.2rem;
         margin-bottom: 1rem;
     }
+    .style-special-list .style-special-list-cover img{
+        margin: 13%;
+    }
     .style-special-list .style-special-list-cover span{
-        top:13%;
-        left:13%;
+        top:14%;
+        left:14%;
     }
     .style-program-list{
         height:9.75rem;
@@ -679,19 +788,19 @@ footer{
         height:9.63rem;
     }
     .style-program-list-cover-play img {
-        width: 50%;
-        height: 50%;
+        width: 30%;
+        height: 30%;
         top:-7px;
         bottom:0;
         left:-7px;
         right:0;
     }
     .style-program-list .style-program-list-content{
-        width:15.63rem;
-        margin: 1.5rem;
+        width:16.2rem;
+        margin: 1.5rem 2rem 1.5rem 0;
     }
     .style-program-list-content-play{
-        margin-top: 3.2rem;
+        margin-top: 4rem;
     }
     .style-anchor-special-detail-cover .style-anchor-special-detail-cover-img{
         width:6rem;
@@ -726,18 +835,52 @@ footer{
     .style-replace-special-list .style-replace-special-list-text-left span{
         top:1%;
         left:1%;
+        width: 4rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
     }
     .style-replace-special-list .style-replace-special-list-text-center span{
         top:1%;
         left:5.5%;
+        width: 4rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
     }
     .style-replace-special-list .style-replace-special-list-text-right span{
         top:1%;
         left:9.5%;
+        width: 4rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
     }
-    .style-replace-special-list .style-special-list-cover img{
+    .style-replace-special-list .style-special-list-cover .style-special-list-cover-image{
         width:90%;
         height:90%;
+    }
+    .style-replace-special-list p{
+        margin-top:-0.7rem;
+    }
+    .aui-tips{
+        height:3.5rem;
+    }
+    .aui-font-size-14{
+        font-size: 1rem !important;
+    }
+    .aui-font-size-12{
+        font-size: 0.8rem !important;
+    }
+    .style-text-open img{
+        float:right;
+    }
+    .style-special-detail-seat{
+        height:4rem;
+    }
+    .footer-text-margin-l-5{
+        margin-left: 2rem !important;
+        line-height: 1.5rem;
+    }
+    .style-program-list-content-play img{
+        margin-bottom:0rem;
     }
 }
 @media (min-width:1024px){
@@ -750,13 +893,16 @@ footer{
         height:13.75rem;
         margin: 1rem 0.56rem;
     }
+    .style-special-list-content-play{
+        line-height: 0.21rem;
+    }
     .style-special-list .style-special-list-cover{
         width:13.63rem;
         height:13.63rem;
     }
     .style-special-list .style-special-list-content{
-        width:20.63rem;
-        margin: 2rem;
+        width: 21.2rem;
+        margin: 1.6rem 3.6rem 1.6rem 0;
     }
     .style-special-list-content-introduction{
         display: -webkit-box;
@@ -769,9 +915,12 @@ footer{
         -webkit-box-orient: vertical;
         margin-top: 1rem;
     }
+    .style-special-list .style-special-list-cover img{
+        margin: 11%;
+    }
     .style-special-list .style-special-list-cover span{
-        top:12.5%;
-        left:12.5%;
+        top:12%;
+        left:12%;
     }
     .style-program-list{
         height:13.75rem;
@@ -782,19 +931,19 @@ footer{
         height:13.63rem;
     }
     .style-program-list-cover-play img {
-        width: 50%;
-        height: 50%;
-        top:-9px;
+        width: 30%;
+        height: 30%;
+        top:-14px;
         bottom:0;
-        left:-9px;
+        left:-14px;
         right:0;
     }
     .style-program-list .style-program-list-content{
-        width:20.63rem;
-        margin: 2rem;
+        width: 21.2rem;
+        margin: 2rem 3.6rem 1.6rem 0;
     }
     .style-program-list-content-play{
-        margin-top: 6.2rem;
+        margin-top: 7rem;
     }
     .style-anchor-special-detail-cover .style-anchor-special-detail-cover-img{
         width:8rem;
@@ -838,12 +987,15 @@ footer{
         top:1%;
         left:4.5%;
     }
-    .style-replace-special-list .style-special-list-cover img{
+    .style-replace-special-list .style-special-list-cover .style-special-list-cover-image{
         width:95%;
         height:95%;
     }
     .style-replace-special-list p{
-        width:95%;
+        margin-top: -0.5rem;
+    }
+    .style-text-open img{
+        float:right;
     }
 }
 .aui-grid [class*=aui-col-]{

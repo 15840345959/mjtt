@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>专辑详情</title>
     <link rel="stylesheet" type="text/css" href="./css/aui.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
@@ -13,14 +14,6 @@
     </style>
 </head>
 <body>
-<!--<header class="aui-bar aui-bar-nav">-->
-<!--<a class="aui-pull-left aui-btn">-->
-<!--<span class="style-back-icon">-->
-<!--<img src="image/back.png" />-->
-<!--</span>-->
-<!--</a>-->
-<!--<div class="aui-title">邀请好友，双方有礼</div>-->
-<!--</header>-->
 
 <div class="aui-card-list style-anchor-header-list">
     <div class="aui-card-list-content style-anchor-header">
@@ -45,7 +38,7 @@
         <img src="./image/special_class.png" />
         <span><p>&nbsp;旅行游记</p></span>
     </div>
-    <div class="style-anchor-introduction aui-font-size-14 aui-ellipsis-3">
+    <div class="style-anchor-introduction aui-font-size-14" id="anchor_introduction">
         在美国混迹多年的旅游达人
         留学、租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、
         租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、
@@ -57,7 +50,7 @@
 </div>
 <section class="style-lists">
     <div class="aui-card-list-header style-font-bold">
-        推荐节目（1101）
+        节目列表（1101）
     </div>
     <div class="style-program">
         <audio controls="controls" loop id="player" hidden>
@@ -142,7 +135,7 @@
     </div>
 </section>
 
-<section class="style-lists aui-margin-t-15 aui-padded-b-15">
+<section class="style-lists aui-margin-t-15 aui-padded-b-15 style-font-bold">
     <div class="aui-card-list-header aui-row">
         <div class="aui-col-xs-6 aui-font-size-18 style-font-bold">相关专辑推荐</div>
         <div class="aui-col-xs-6 aui-font-size-16 aui-text-right style-replace">
@@ -155,8 +148,11 @@
             <a href="./special_detail.html">
                 <div class="aui-col-xs-4 aui-margin-b-15 aui-text-left style-replace-special-list-text-left">
                     <div class="style-special-list-cover style-replace-special-list-float-left style-float-left aui-margin-b-5">
-                        <img src="./image/special_cover.jpg"/>
-                        <span class="aui-font-size-12">20集</span>
+                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
+                        <span class="aui-font-size-12">
+                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                            1.6万
+                        </span>
                     </div>
                     <p class="aui-ellipsis-2 aui-font-size-12 style-replace-special-list-float-left style-float-left">老马调侃美国，老马调侃美国</p>
                 </div>
@@ -164,8 +160,11 @@
             <a href="./special_detail.html">
                 <div class="aui-col-xs-4 aui-margin-b-15 aui-text-center style-replace-special-list-text-center">
                     <div class="style-special-list-cover style-margin-center style-replace-special-list-margin-center aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" />
-                        <span class="aui-font-size-12">20集</span>
+                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
+                        <span class="aui-font-size-12">
+                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                            1.6万
+                        </span>
                     </div>
                     <p class="aui-ellipsis-2 aui-font-size-12 style-replace-special-list-margin-center style-margin-center">老马调侃美国，老马调侃美国</p>
                 </div>
@@ -173,35 +172,47 @@
             <a href="./special_detail.html">
                 <div class="aui-col-xs-4 aui-margin-b-15 aui-text-right style-replace-special-list-text-right">
                     <div class="style-special-list-cover style-float-right style-replace-special-list-float-right aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" />
-                        <span class="aui-font-size-12">20集</span>
+                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
+                        <span class="aui-font-size-12">
+                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                            1.6万
+                        </span>
                     </div>
                     <p class="aui-ellipsis-2 aui-font-size-12 style-float-right style-replace-special-list-float-right">老马调侃美国，老马调侃美国</p>
                 </div>
             </a>
             <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-left style-replace-special-list-text-left">
+                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-left style-replace-special-list-text-left style-replace-special-list-text-left-adjust">
                     <div class="style-special-list-cover style-float-left style-replace-special-list-float-left aui-margin-b-5">
-                        <img src="./image/special_cover.jpg"/>
-                        <span class="aui-font-size-12">20集</span>
+                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
+                        <span class="aui-font-size-12">
+                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                            1.6万
+                        </span>
                     </div>
                     <p class="aui-ellipsis-2 aui-font-size-12 style-float-left style-replace-special-list-float-left">老马调侃美国，老马调侃美国</p>
                 </div>
             </a>
             <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-center style-replace-special-list-text-center">
+                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-center style-replace-special-list-text-center style-replace-special-list-text-center-adjust">
                     <div class="style-special-list-cover style-margin-center style-replace-special-list-margin-center aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" />
-                        <span class="aui-font-size-12">20集</span>
+                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
+                        <span class="aui-font-size-12">
+                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                            1.6万
+                        </span>
                     </div>
                     <p class="aui-ellipsis-2 aui-font-size-12 style-margin-center style-replace-special-list-margin-center">老马调侃美国，老马调侃美国</p>
                 </div>
             </a>
             <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-right style-replace-special-list-text-right">
+                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-right style-replace-special-list-text-right style-replace-special-list-text-right-adjust">
                     <div class="style-special-list-cover style-float-right style-replace-special-list-float-right aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" />
-                        <span class="aui-font-size-12">20集</span>
+                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
+                        <span class="aui-font-size-12">
+                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                            1.6万
+                        </span>
                     </div>
                     <p class="aui-ellipsis-2 aui-font-size-12 style-float-right style-replace-special-list-float-right">老马调侃美国，老马调侃美国</p>
                 </div>
@@ -210,7 +221,7 @@
     </secton>
 </section>
 
-<div style="height:4.5rem;"></div>
+<div class="style-special-detail-seat"></div>
 
 <footer id="footer">
     <div class="aui-tips aui-row" onclick="download()">
@@ -218,8 +229,8 @@
             <img src="./image/app.png" />
         </div>
         <div class="aui-col-xs-5">
-            <div class="style-text-14">美景听听App</div>
-            <div class="style-text-12">让旅行更有内涵</div>
+            <div class="aui-font-size-14 footer-text-margin-l-5">美景听听—<span class="aui-font-size-12 aui-margin-l-5">达人说</span></div>
+            <div class="aui-font-size-12 footer-text-margin-l-5">让旅行更有内涵</div>
         </div>
         <div class="aui-col-xs-5 style-text-open">
             <img src="./image/open.png" />
@@ -234,8 +245,27 @@
 <script type="text/javascript" src="./script/common.js" ></script>
 <script type="text/javascript">
     $(function(){
+        var anchor_introduction_all=$("#anchor_introduction").text();
+        var win_width=$(window).width();
+        if(win_width>=375&&win_width<412){
+            if (GetLength($("#anchor_introduction").text()) > 80) {
+                $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 80));
+            }
+        }
+        else if(win_width>=412&&win_width<=414){
+            if (GetLength($("#anchor_introduction").text()) > 120) {
+                $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 120));
+            }
+        }
+        else{
+            if (GetLength($("#anchor_introduction").text()) > 100) {
+                $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 100));
+            }
+        }
+
         $('#more').click(function(){
-            $('.aui-ellipsis-3').removeClass('aui-ellipsis-3');
+//            $('.aui-ellipsis-3').removeClass('aui-ellipsis-3');
+            $("#anchor_introduction").text(anchor_introduction_all);
             $('#more').hide();
         })
 
@@ -247,16 +277,6 @@
             $category.show();
             $('#showMoreProgram').hide();
         })
-
-
-//        if($(window).width()<=320){
-//            $(".style-replace-special-list-text-left").removeClass("aui-text-left");
-//            $(".style-replace-special-list-float-left").removeClass("style-float-left");
-//            $(".style-replace-special-list-text-right").removeClass("aui-text-right");
-//            $(".style-replace-special-list-float-right").removeClass("style-float-right");
-//            $(".style-replace-special-list-text-center").removeClass("aui-text-center");
-//            $(".style-replace-special-list-margin-center").removeClass("style--margin-center");
-//        }
     })
     var tab = new auiTab({
         element:document.getElementById("tab"),
