@@ -4,9 +4,10 @@ function getAnchorDetail(anchor_id){
         anchor_id:anchor_id
     }
     anchor(param,function(data){
-        toast.hide();
         // console.log("anchor is :"+JSON.stringify(data))
         if(data){
+            var title=data.nickname+"-美景听听"
+            $("title").html(title);
             // data.description="在美国混迹多年的旅游达人\n" +
             //     "        留学、租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、\n" +
             //     "        租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、\n" +
@@ -26,6 +27,7 @@ function getAnchorDetail(anchor_id){
         else{
 
         }
+        toast.hide();
     },function(){
         if(anchor_id==null){
             toast.hide();
@@ -42,7 +44,6 @@ function getAnchorAllAlbum(anchor_id){
         anchor_id:anchor_id
     }
     album(param,function(datas){
-        toast.hide();
         // console.log("album is :"+JSON.stringify(datas))
         if(datas.count>0){
             var data=datas.results
@@ -59,6 +60,7 @@ function getAnchorAllAlbum(anchor_id){
             $("#anchor_special_count").html(interText("专辑"))
             $("#anchor_special").html(nothing("暂时还没有上传专辑"))
         }
+        toast.hide();
     },function(){
         toast.hide();
         openDialog("请求失败",['确定'],function(ret){
@@ -73,7 +75,6 @@ function getAnchorAllProgram(anchor_id){
         anchor_id:anchor_id
     }
     program(param,function(datas){
-        toast.hide();
         // console.log("album is :"+JSON.stringify(datas))
         if(datas.count>0){
             var data=datas.results
@@ -87,6 +88,7 @@ function getAnchorAllProgram(anchor_id){
         else{
             $("#anchor_program").html(nothing("暂时还没有上传节目"))
         }
+        toast.hide();
     },function(){
         toast.hide();
         openDialog("请求失败",['确定'],function(ret){
