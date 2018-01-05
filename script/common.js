@@ -7,6 +7,15 @@ function download(){
     }
 }
 
+//获取浏览器参数
+function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+}
 
 function playMusic(id){
     var player = $("#player")[0]; /*jquery对象转换成js对象*/
@@ -48,10 +57,6 @@ var GetLength = function (str) {
     return realLength;
 };
 
-//js截取字符串，中英文都能用
-//如果给定的字符串大于指定长度，截取指定长度返回，否者返回源字符串。
-//字符串，长度
-
 /**
  * js截取字符串，中英文都能用
  * @param str：需要截取的字符串
@@ -78,5 +83,127 @@ function cutstr(str, len) {
     //如果给定字符串小于指定长度，则返回源字符串；
     if (str_length < len) {
         return str;
+    }
+}
+
+//对显示简介进行信息处理
+function showDescription(data){
+    var win_width=$(window).width();
+    if(win_width>=375&&win_width<412){
+        if (GetLength(data) > 80) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 80));
+            return cutstr(data, 80)
+        }
+        else{
+            return data;
+        }
+    }
+    else if(win_width>=412&&win_width<=414){
+        if (GetLength(data) > 120) {
+            return cutstr(data, 120)
+        }
+    }
+    else{
+        if (GetLength(data) > 100) {
+            return cutstr(data, 100)
+        }
+        else{
+            return data
+        }
+    }
+}
+
+//点击更多加载详情
+function getMore(){
+    $("#anchor_introduction").text(anchor_introduction_all);
+    $('#more').hide();
+}
+
+//对数据进行处理
+function handleData(data){
+    if(data<10000){
+        return data;
+    }
+    else if(data>=10000&&data<100000000){
+        if(data%10000==0){
+            data=data/10000
+            return data+"万";
+        }
+        else{
+            var data_m=parseInt(data / 10000);
+            var data_t=parseInt((data-data_m*10000) / 1000);
+            data=data_m+"."+data_t;
+            return data+"万";
+        }
+    }
+    else if(data>=100000000){
+        if(data%100000000==0){
+            data=data/100000000
+            return data+"亿";
+        }
+        else{
+            var data_m=parseInt(data / 100000000);
+            var data_t=parseInt((data-data_m*100000000) / 10000000);
+            data=data_m+"."+data_t;
+            return data+"亿";
+        }
+    }
+}
+
+
+//弹窗
+var dialog = new auiDialog({})
+function openDialog(msg,buttons,callback){
+    dialog.alert({
+        title:"友情提示",
+        msg:msg,
+        buttons:buttons
+    },callback)
+}
+
+//没有数据时的提示信息
+function nothing(content){
+    var str="<img src=\"./image/nothing.png\" class=\"style-nothing-image\" />\n" +
+        "<div class=\"style-nothing-content aui-font-size-14\">"+content+"</div>";
+    return str;
+}
+
+//提示窗
+var toast = new auiToast();
+function showToast(type,title){
+    switch (type) {
+        case "success":
+            toast.success({
+                title:title,
+                duration:2000
+            });
+            break;
+        case "fail":
+            toast.fail({
+                title:title,
+                duration:2000
+            });
+            break;
+        case "custom":
+            toast.custom({
+                title:title,
+                html:'<i class="aui-iconfont aui-icon-laud"></i>',
+                duration:2000
+            });
+            break;
+        case "loading":
+            toast.loading({
+                title:title,
+                duration:2000
+            },function(ret){
+                // console.log(ret);
+                setTimeout(function(){
+                    toast.hide();
+                }, 3000)
+            });
+            break;
+        default:
+            // statements_def
+            break;
     }
 }

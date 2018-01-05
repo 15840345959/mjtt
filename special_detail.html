@@ -241,25 +241,39 @@
 <script type="text/javascript" src="./script/jquery.min.js"></script>
 <script type="text/javascript" src="./script/api.js" ></script>
 <script type="text/javascript" src="./script/aui-toast.js" ></script>
+<script type="text/javascript" src="./script/aui-dialog.js" ></script>
 <script type="text/javascript" src="./script/aui-tab.js" ></script>
 <script type="text/javascript" src="./script/common.js" ></script>
+<script type="text/javascript" src="./script/api-manager.js" ></script>
+<script type="text/javascript" src="./script/doT.min.js" ></script>
+<script type="text/javascript" src="./script/api-controller.js" ></script>
 <script type="text/javascript">
     $(function(){
+        loadData()
         var anchor_introduction_all=$("#anchor_introduction").text();
         var win_width=$(window).width();
         if(win_width>=375&&win_width<412){
             if (GetLength($("#anchor_introduction").text()) > 80) {
                 $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 80));
             }
+            else{
+                $("#more").hide()
+            }
         }
         else if(win_width>=412&&win_width<=414){
             if (GetLength($("#anchor_introduction").text()) > 120) {
                 $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 120));
             }
+            else{
+                $("#more").hide()
+            }
         }
         else{
             if (GetLength($("#anchor_introduction").text()) > 100) {
                 $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 100));
+            }
+            else{
+                $("#more").hide()
             }
         }
 
@@ -290,5 +304,9 @@
             $("#anchor_program").show();
         }
     });
+
+    function loadData(){
+
+    }
 </script>
 </html>

@@ -52,15 +52,6 @@
 <script type="text/javascript" src="./script/common.js" ></script>
 <script type="text/javascript">
 
-    function getQueryString(name) {
-        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) {
-            return unescape(r[2]);
-        }
-        return null;
-    }
-
     var invitationCode ="";
     $(function(){
         $("#image").click(function(){
