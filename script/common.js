@@ -89,26 +89,76 @@ function cutstr(str, len) {
 //对显示简介进行信息处理
 function showDescription(data){
     var win_width=$(window).width();
-    if(win_width>=375&&win_width<412){
-        if (GetLength(data) > 80) {
-            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 80));
-            return cutstr(data, 80)
+    if(win_width<=320){
+        if (GetLength(data) > 40) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 40));
+            return cutstr(data, 40)
         }
         else{
             return data;
         }
     }
-    else if(win_width>=412&&win_width<=414){
-        if (GetLength(data) > 120) {
-            return cutstr(data, 120)
+    else if(win_width>320&&win_width<=360){
+        if (GetLength(data) > 44) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 44));
+            return cutstr(data, 44)
+        }
+        else{
+            return data;
+        }
+    }
+    else if(win_width>360&&win_width<=375){
+        if (GetLength(data) > 48) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 48));
+            return cutstr(data, 48)
+        }
+        else{
+            return data;
+        }
+    }
+    else if(win_width>375&&win_width<=400){
+        if (GetLength(data) > 52) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 52));
+            return cutstr(data, 52)
+        }
+        else{
+            return data;
+        }
+    }
+    else if(win_width>400&&win_width<=415){
+        if (GetLength(data) > 56) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 56));
+            return cutstr(data, 56)
+        }
+        else{
+            return data;
+        }
+    }
+    else if(win_width>415&&win_width<=770){
+        if (GetLength(data) > 70) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 70));
+            return cutstr(data, 70)
+        }
+        else{
+            return data;
+        }
+    }
+    else if(win_width>770&&win_width<=1024){
+        if (GetLength(data) > 100) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 100));
+            return cutstr(data, 100)
+        }
+        else{
+            return data;
         }
     }
     else{
         if (GetLength(data) > 100) {
+            $("#anchor_introduction").text(cutstr($("#anchor_introduction").text(), 100));
             return cutstr(data, 100)
         }
         else{
-            return data
+            return data;
         }
     }
 }

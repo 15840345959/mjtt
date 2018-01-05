@@ -51,7 +51,7 @@
     padding-left: 0.57rem;
 }
 .style-text-open img{
-    margin:0.28rem 0;
+    margin:0;
 }
 
 .aui-bar-nav{
@@ -542,6 +542,12 @@ footer{
 .footer-text-margin-l-5{
     margin-left: 0.75rem !important;
 }
+.footer-center{
+    padding-top: 0.2rem;
+}
+.footer-right{
+    padding-top: 0.35rem;
+}
 @media (max-width:320px){
     .aui-tips {
         padding: 0.43rem;
@@ -629,8 +635,13 @@ footer{
         height:2.7rem;
     }
     .footer-text-margin-l-5{
+        margin-top:-0.1rem;
         margin-left: 0.25rem !important;
     }
+    .footer .footer-text div{
+        padding-top:0rem;
+    }
+
 }
 @media (min-width:375px){
     .style-special-list .style-special-list-cover img{
@@ -662,6 +673,12 @@ footer{
     }
     .style-special-detail-seat{
         height:3.2rem;
+    }
+    .footer-text-margin-l-5{
+        margin-top:-0.15rem;
+    }
+    .footer-center{
+        padding-top:0.5rem;
     }
 }
 @media (min-width:412px){
@@ -861,7 +878,7 @@ footer{
         margin-top:-0.7rem;
     }
     .aui-tips{
-        height:3.5rem;
+        height:3.1rem;
     }
     .aui-font-size-14{
         font-size: 1rem !important;
@@ -881,6 +898,9 @@ footer{
     }
     .style-program-list-content-play img{
         margin-bottom:0rem;
+    }
+    .footer-right{
+        margin-top:-0.2rem;
     }
 }
 @media (min-width:1024px){
