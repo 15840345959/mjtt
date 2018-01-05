@@ -124,10 +124,7 @@
     $(function(){
         var anchor_id = getQueryString("anchor_id");
         if(anchor_id==null){
-            openDialog("获取主播详情失败",['确定'],function(ret){
-                console.log(ret)
-                // return
-            })
+            $("body").html(nothing("获取主播详情失败"))
         }
         else{
             loadData(anchor_id)  //加载页面数据

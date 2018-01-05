@@ -21,85 +21,11 @@
 <section class="style-lists aui-margin-t-15 aui-padded-b-15 style-font-bold">
     <div class="aui-card-list-header aui-row">
         <div class="aui-col-xs-6 aui-font-size-18 style-font-bold">相关专辑推荐</div>
-        <div class="aui-col-xs-6 aui-font-size-16 aui-text-right style-replace">
-            换一批
-            <img src="./image/replace.png" />
-        </div>
+        <div class="aui-col-xs-6 aui-font-size-16 aui-text-right style-replace" id="category_program_button"></div>
     </div>
     <secton class="style-replace-special-list">
-        <div class="aui-row aui-font-size-12 style-replace-special-margin">
-            <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-left style-replace-special-list-text-left">
-                    <div class="style-special-list-cover style-replace-special-list-float-left style-float-left aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
-                        <span class="aui-font-size-12">
-                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
-                            1.6万
-                        </span>
-                    </div>
-                    <p class="aui-ellipsis-2 aui-font-size-12 style-replace-special-list-float-left style-float-left">老马调侃美国，老马调侃美国</p>
-                </div>
-            </a>
-            <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-center style-replace-special-list-text-center">
-                    <div class="style-special-list-cover style-margin-center style-replace-special-list-margin-center aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
-                        <span class="aui-font-size-12">
-                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
-                            1.6万
-                        </span>
-                    </div>
-                    <p class="aui-ellipsis-2 aui-font-size-12 style-replace-special-list-margin-center style-margin-center">老马调侃美国，老马调侃美国</p>
-                </div>
-            </a>
-            <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-right style-replace-special-list-text-right">
-                    <div class="style-special-list-cover style-float-right style-replace-special-list-float-right aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
-                        <span class="aui-font-size-12">
-                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
-                            1.6万
-                        </span>
-                    </div>
-                    <p class="aui-ellipsis-2 aui-font-size-12 style-float-right style-replace-special-list-float-right">老马调侃美国，老马调侃美国</p>
-                </div>
-            </a>
-            <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-left style-replace-special-list-text-left style-replace-special-list-text-left-adjust">
-                    <div class="style-special-list-cover style-float-left style-replace-special-list-float-left aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
-                        <span class="aui-font-size-12">
-                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
-                            1.6万
-                        </span>
-                    </div>
-                    <p class="aui-ellipsis-2 aui-font-size-12 style-float-left style-replace-special-list-float-left">老马调侃美国，老马调侃美国</p>
-                </div>
-            </a>
-            <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-center style-replace-special-list-text-center style-replace-special-list-text-center-adjust">
-                    <div class="style-special-list-cover style-margin-center style-replace-special-list-margin-center aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
-                        <span class="aui-font-size-12">
-                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
-                            1.6万
-                        </span>
-                    </div>
-                    <p class="aui-ellipsis-2 aui-font-size-12 style-margin-center style-replace-special-list-margin-center">老马调侃美国，老马调侃美国</p>
-                </div>
-            </a>
-            <a href="./special_detail.html">
-                <div class="aui-col-xs-4 aui-margin-b-15 aui-text-right style-replace-special-list-text-right style-replace-special-list-text-right-adjust">
-                    <div class="style-special-list-cover style-float-right style-replace-special-list-float-right aui-margin-b-5">
-                        <img src="./image/special_cover.jpg" class="style-special-list-cover-image"/>
-                        <span class="aui-font-size-12">
-                            <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
-                            1.6万
-                        </span>
-                    </div>
-                    <p class="aui-ellipsis-2 aui-font-size-12 style-float-right style-replace-special-list-float-right">老马调侃美国，老马调侃美国</p>
-                </div>
-            </a>
+        <div class="aui-row aui-font-size-12 style-replace-special-margin" id="category_program_lists">
+
         </div>
     </secton>
 </section>
@@ -186,14 +112,88 @@
                 </div>
             {{~}}
         </div>
-        {{?it.length < 10}}
+        {{?it.more}}
+            {{?it.length<it.count}}
             <div class="style-program-more aui-font-size-16 aui-text-center" onclick="showMoreProgramLists({{=it.album_id}})">
                 查看更多
             </div>
+            {{?}}
         {{?}}
     {{??}}
         {{=it.program}}
     {{?}}
+</script>
+<script id="category_program_lists_template" type="text/x-dot-template">
+    <a href="./special_detail.html?album_id={{=it.id}}">
+        {{?it.index==0}}
+            <div class="aui-col-xs-4 aui-margin-b-15 aui-text-left style-replace-special-list-text-left">
+                <div class="style-special-list-cover style-replace-special-list-float-left style-float-left aui-margin-b-5">
+                    <img src="{{=it.image_url}}" class="style-special-list-cover-image"/>
+                    <span class="aui-font-size-12">
+                        <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                        {{=it.play_times}}
+                    </span>
+                </div>
+                <p class="aui-ellipsis-2 aui-font-size-12 style-replace-special-list-float-left style-float-left">{{=it.name}}</p>
+            </div>
+        {{??it.index==1}}
+            <div class="aui-col-xs-4 aui-margin-b-15 aui-text-center style-replace-special-list-text-center">
+                <div class="style-special-list-cover style-margin-center style-replace-special-list-margin-center aui-margin-b-5">
+                    <img src="{{=it.image_url}}" class="style-special-list-cover-image"/>
+                    <span class="aui-font-size-12">
+                        <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                        {{=it.play_times}}
+                    </span>
+                </div>
+                <p class="aui-ellipsis-2 aui-font-size-12 style-replace-special-list-margin-center style-margin-center">{{=it.name}}</p>
+            </div>
+        {{??it.index==2}}
+            <div class="aui-col-xs-4 aui-margin-b-15 aui-text-right style-replace-special-list-text-right">
+                <div class="style-special-list-cover style-float-right style-replace-special-list-float-right aui-margin-b-5">
+                    <img src="{{=it.image_url}}" class="style-special-list-cover-image"/>
+                    <span class="aui-font-size-12">
+                        <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                        {{=it.play_times}}
+                    </span>
+                </div>
+                <p class="aui-ellipsis-2 aui-font-size-12 style-float-right style-replace-special-list-float-right">{{=it.name}}</p>
+            </div>
+        <div class="aui-clearfix"></div>
+        {{??it.index==3}}
+            <div class="aui-col-xs-4 aui-margin-b-15 aui-text-left style-replace-special-list-text-left style-replace-special-list-text-left-adjust">
+                <div class="style-special-list-cover style-float-left style-replace-special-list-float-left aui-margin-b-5">
+                    <img src="{{=it.image_url}}" class="style-special-list-cover-image"/>
+                    <span class="aui-font-size-12">
+                        <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                        {{=it.play_times}}
+                    </span>
+                </div>
+                <p class="aui-ellipsis-2 aui-font-size-12 style-float-left style-replace-special-list-float-left">{{=it.name}}</p>
+            </div>
+        {{??it.index==4}}
+            <div class="aui-col-xs-4 aui-margin-b-15 aui-text-center style-replace-special-list-text-center style-replace-special-list-text-center-adjust">
+                <div class="style-special-list-cover style-margin-center style-replace-special-list-margin-center aui-margin-b-5">
+                    <img src="{{=it.image_url}}" class="style-special-list-cover-image"/>
+                    <span class="aui-font-size-12">
+                        <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                        {{=it.play_times}}
+                    </span>
+                </div>
+                <p class="aui-ellipsis-2 aui-font-size-12 style-margin-center style-replace-special-list-margin-center">{{=it.name}}</p>
+            </div>
+        {{??it.index==5}}
+            <div class="aui-col-xs-4 aui-margin-b-15 aui-text-right style-replace-special-list-text-right style-replace-special-list-text-right-adjust">
+                <div class="style-special-list-cover style-float-right style-replace-special-list-float-right aui-margin-b-5">
+                    <img src="{{=it.image_url}}" class="style-special-list-cover-image"/>
+                    <span class="aui-font-size-12">
+                        <img src="./image/play_count2.png" class="style-special-list-cover-play-image" />
+                        {{=it.play_times}}
+                    </span>
+                </div>
+                <p class="aui-ellipsis-2 aui-font-size-12 style-float-right style-replace-special-list-float-right">{{=it.name}}</p>
+            </div>
+        {{?}}
+    </a>
 </script>
 </body>
 <script type="text/javascript" src="./script/jquery.min.js"></script>
@@ -210,21 +210,11 @@
     $(function(){
         album_id = getQueryString("album_id");
         if(album_id==null){
-            openDialog("获取专辑详情失败",['确定'],function(ret){
-                console.log(ret)
-                // return
-            })
+            $("body").html(nothing("获取专辑详情失败"))
         }
         else{
             loadData(album_id)  //加载页面数据
         }
-        // var $category = $('.style-program .style-program-list :gt(1)');
-        // $category.hide();
-        // var $toggleBtn = $('#showMoreProgram');
-        // $toggleBtn.click(function(){
-        //     $category.show();
-        //     $('#showMoreProgram').hide();
-        // })
     })
 
     function loadData(album_id){

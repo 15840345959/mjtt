@@ -67,7 +67,7 @@ function getAnchorAllAlbum(anchor_id){
         })
     })
 }
-//主播下所有可用的节目列表
+//主播下所有可用的节目列表（前10）
 function getAnchorAllProgram(anchor_id){
     var param={
         anchor_id:anchor_id
@@ -76,7 +76,14 @@ function getAnchorAllProgram(anchor_id){
         // console.log("album is :"+JSON.stringify(datas))
         if(datas.count>0){
             var data=datas.results
-            for(var i=0;i<data.length;i++){
+            var length
+            if(data.length>=10){
+                length=10
+            }
+            else{
+                length=data.length
+            }
+            for(var i=0;i<length;i++){
                 data[i].index=i;
                 data[i].play_times=handleData(data[i].play_times);
                 var interText = doT.template($("#anchor_program_template").text());
@@ -125,9 +132,11 @@ function getAlbumDetail(album_id){
                 album_id:data.id,
                 count:data.program_total,
                 program:data.program,
-                length:data.program.length
+                length:data.program.length,
+                more:true
             }
             getAllProgramByAlbum(program)
+            getMoreProgram(data.category.id)
         }
         else{
 
@@ -143,7 +152,7 @@ function getAlbumDetail(album_id){
 }
 //专辑页的节目列表
 function getAllProgramByAlbum(data){
-    console.log("getAllProgramByAlbum data is : "+JSON.stringify(data))
+    // console.log("getAllProgramByAlbum data is : "+JSON.stringify(data))
     if(data.program){
         for(var i=0;i<data.program.length;i++){
             data.program[i].play_times=handleData(data.program[i].play_times);
@@ -166,9 +175,51 @@ function showMoreProgramLists(album_id){
             album_id:album_id,
             count:datas.count,
             program:datas.results,
-            length:datas.results.length
+            length:datas.results.length,
+            more:false
         }
         getAllProgramByAlbum(program)
+    },function(){
+        toast.hide();
+        openDialog("请求失败",['确定'],function(ret){
+            console.log(ret)
+            return
+        })
+    })
+}
+//获取相关专辑+换一换
+function getMoreProgram(category_id){
+    var param={
+        category_id:category_id
+    }
+    getMorecategory(param,function(datas){
+        console.log("getMorecategory is : "+JSON.stringify(datas))
+        if(datas.count>0){
+            $("#category_program_lists").html("")
+
+            var data=datas.results
+            if(datas.count>=6){
+                var str="<span onclick=\"getMoreProgram("+category_id+")\">\n" +
+                    "        换一批\n" +
+                    "        <img src=\"./image/replace.png\" />\n" +
+                    "    </span>";
+                $("#category_program_button").html(str);
+            }
+            else{
+                $("#category_program_button").html("");
+            }
+
+            for(var i=0;i<data.length;i++){
+                data[i].index=i;
+                data[i].play_times=handleData(data[i].play_times);
+                var interText = doT.template($("#category_program_lists_template").text());
+                $("#category_program_lists").append(interText(data[i]));
+            }
+        }
+        else{
+            $("#anchor_program").html(nothing("暂时没有相关专辑"))
+        }
+        toast.hide();
     },function(){
         toast.hide();
         openDialog("请求失败",['确定'],function(ret){

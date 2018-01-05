@@ -54,3 +54,10 @@ function getAllProgram(param,successCallBack,errorCallBack){
     ajaxRequest("rest/radio/album/"+album_id+"/program/", "GET", successCallBack, errorCallBack)
 }
 
+//获取相关专辑+换一换
+function getMorecategory(param,successCallBack,errorCallBack){
+    var category_id=param.category_id
+    ajaxRequest("rest/radio/category/"+category_id+"/album/", "GET", successCallBack, errorCallBack)
+}
+
+
