@@ -12,10 +12,10 @@ function getAnchorDetail(anchor_id){
             //     "        留学、租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、\n" +
             //     "        租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、\n" +
             //     "        租房不用愁，听老马给你解说美国。"                    //用于测试
-            anchor_introduction_all=data.description
+            introduction_all=data.description
             if(data.description.length>0){
                 data.description=showDescription(data.description)  //对主播简介做数据处理
-                data.more=anchor_introduction_all!=data.description?true:false  //判断是否显示“显示更多”按钮
+                data.more=introduction_all!=data.description?true:false  //判断是否显示“显示更多”按钮
             }
             else{
                 data.more=false
@@ -29,13 +29,11 @@ function getAnchorDetail(anchor_id){
         }
         toast.hide();
     },function(){
-        if(anchor_id==null){
-            toast.hide();
-            openDialog("请求失败",['确定'],function(ret){
-                console.log(ret)
-                return
-            })
-        }
+        toast.hide();
+        openDialog("请求失败",['确定'],function(ret){
+            console.log(ret)
+            return
+        })
     })
 }
 //主播下所有可用的专辑列表
@@ -89,6 +87,88 @@ function getAnchorAllProgram(anchor_id){
             $("#anchor_program").html(nothing("暂时还没有上传节目"))
         }
         toast.hide();
+    },function(){
+        toast.hide();
+        openDialog("请求失败",['确定'],function(ret){
+            console.log(ret)
+            return
+        })
+    })
+}
+//获取专辑详细信息
+function getAlbumDetail(album_id){
+    var param={
+        album_id:album_id
+    }
+    getAlbumById(param,function(data){
+        // console.log("albumDetail is :"+JSON.stringify(data))
+        if(data){
+            var title=data.name+"-美景听听"
+            $("title").html(title);
+            // data.description="在美国混迹多年的旅游达人\n" +
+            //     "        留学、租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、\n" +
+            //     "        租房不用愁，听老马给你解说美国当地人文趣事趣事趣事趣事趣事趣事趣事趣事留学、\n" +
+            //     "        租房不用愁，听老马给你解说美国。"                    //用于测试
+            introduction_all=data.description
+            if(data.description.length>0){
+                data.description=showDescription(data.description)  //对主播简介做数据处理
+                data.more=introduction_all!=data.description?true:false  //判断是否显示“显示更多”按钮
+            }
+            else{
+                data.more=false
+            }
+            data.play_times=handleData(data.play_times)
+            // console.log("anchor new is :"+JSON.stringify(data))
+            var interText = doT.template($("#album_detail_content_template").text())
+            $("#album_detail_content").html(interText(data))
+            var program={
+                album_id:data.id,
+                count:data.program_total,
+                program:data.program,
+                length:data.program.length
+            }
+            getAllProgramByAlbum(program)
+        }
+        else{
+
+        }
+        toast.hide();
+    },function(){
+        toast.hide();
+        openDialog("请求失败",['确定'],function(ret){
+            console.log(ret)
+            return
+        })
+    })
+}
+//专辑页的节目列表
+function getAllProgramByAlbum(data){
+    console.log("getAllProgramByAlbum data is : "+JSON.stringify(data))
+    if(data.program){
+        for(var i=0;i<data.program.length;i++){
+            data.program[i].play_times=handleData(data.program[i].play_times);
+        }
+    }
+    else{
+        data.program=nothing("暂时还没有上传节目")
+    }
+    var interText = doT.template($("#album_program_lists_template").text())
+    $("#album_program_lists").html(interText(data))
+}
+//点击加载更多
+function showMoreProgramLists(album_id){
+    var param={
+        album_id:album_id
+    }
+    getAllProgram(param,function(datas){
+        // console.log("getAllProgram datas is : "+JSON.stringify(datas))
+        var program={
+            album_id:album_id,
+            count:datas.count,
+            program:datas.results,
+            length:datas.results.length
+        }
+        getAllProgramByAlbum(program)
     },function(){
         toast.hide();
         openDialog("请求失败",['确定'],function(ret){

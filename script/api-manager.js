@@ -42,3 +42,15 @@ function program(param,successCallBack,errorCallBack){
     ajaxRequest("rest/radio/anchor/"+anchor_id+"/program/", "GET", successCallBack, errorCallBack)
 }
 
+//获取专辑详细信息
+function getAlbumById(param,successCallBack,errorCallBack){
+    var album_id=param.album_id
+    ajaxRequest("rest/radio/album/"+album_id, "GET", successCallBack, errorCallBack)
+}
+
+//专辑下更多节目列表
+function getAllProgram(param,successCallBack,errorCallBack){
+    var album_id=param.album_id
+    ajaxRequest("rest/radio/album/"+album_id+"/program/", "GET", successCallBack, errorCallBack)
+}
+

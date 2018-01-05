@@ -114,8 +114,9 @@ function showDescription(data){
 }
 
 //点击更多加载详情
+var introduction_all
 function getMore(){
-    $("#anchor_introduction").text(anchor_introduction_all);
+    $("#anchor_introduction").text(introduction_all);
     $('#more').hide();
 }
 

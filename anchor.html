@@ -92,7 +92,7 @@
 </script>
 <script id="anchor_program_template" type="text/x-dot-template">
     <div class="style-program-list">
-        <div class="style-program-list-cover" id="program_play_{{=it.index}}" audio-index="{{=it.audio}}" onclick="playMusic({{=it.index}})">
+        <div class="style-program-list-cover" id="program_play_{{=it.id}}" audio-index="{{=it.audio}}" onclick="playMusic({{=it.id}})">
             <img src="{{=it.image}}" />
             <span class="style-program-list-cover-play">
                     <img src="./image/play_start.png" />
@@ -121,7 +121,6 @@
 <script type="text/javascript" src="./script/doT.min.js" ></script>
 <script type="text/javascript" src="./script/api-controller.js" ></script>
 <script type="text/javascript">
-    var anchor_introduction_all
     $(function(){
         var anchor_id = getQueryString("anchor_id");
         if(anchor_id==null){
