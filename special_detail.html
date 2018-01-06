@@ -113,11 +113,9 @@
             {{~}}
         </div>
         {{?it.more}}
-            {{?it.length<it.count}}
-            <div class="style-program-more aui-font-size-16 aui-text-center" onclick="showMoreProgramLists({{=it.album_id}})">
+            <div class="style-program-more aui-font-size-16 aui-text-center" onclick="showMoreProgramLists({{=it.album_id}},{{=it.page}})">
                 查看更多
             </div>
-            {{?}}
         {{?}}
     {{??}}
         {{=it.program}}

@@ -128,12 +128,17 @@ function getAlbumDetail(album_id){
             // console.log("anchor new is :"+JSON.stringify(data))
             var interText = doT.template($("#album_detail_content_template").text())
             $("#album_detail_content").html(interText(data))
+            var more=false
+            if(data.program.length<data.program_total){
+                more=true
+            }
             var program={
                 album_id:data.id,
                 count:data.program_total,
                 program:data.program,
                 length:data.program.length,
-                more:true
+                more:more,
+                page:1
             }
             getAllProgramByAlbum(program)
             getMoreProgram(data.category.id)
@@ -151,6 +156,14 @@ function getAlbumDetail(album_id){
     })
 }
 //专辑页的节目列表
+var program={
+    album_id:null,
+    count:0,
+    program:[],
+    length:0,
+    more:false,
+    page:1,
+}
 function getAllProgramByAlbum(data){
     // console.log("getAllProgramByAlbum data is : "+JSON.stringify(data))
     if(data.program){
@@ -165,20 +178,27 @@ function getAllProgramByAlbum(data){
     $("#album_program_lists").html(interText(data))
 }
 //点击加载更多
-function showMoreProgramLists(album_id){
+function showMoreProgramLists(album_id,page){
     var param={
-        album_id:album_id
+        album_id:album_id,
+        page:page
     }
     getAllProgram(param,function(datas){
         // console.log("getAllProgram datas is : "+JSON.stringify(datas))
-        var program={
-            album_id:album_id,
-            count:datas.count,
-            program:datas.results,
-            length:datas.results.length,
-            more:false
+        program.album_id=album_id
+        var program_results=datas.results
+        program.program=program.program.concat(program_results)
+        program.count=datas.count
+        program.length=program.program.length
+        if(datas.next){
+            page++
+            program.page=page
+            showMoreProgramLists(album_id,page)
         }
-        getAllProgramByAlbum(program)
+        else{
+            getAllProgramByAlbum(program)
+            console.log("getAllProgram program is :"+JSON.stringify(program))
+        }
     },function(){
         toast.hide();
         openDialog("请求失败",['确定'],function(ret){
@@ -193,7 +213,7 @@ function getMoreProgram(category_id){
         category_id:category_id
     }
     getMorecategory(param,function(datas){
-        console.log("getMorecategory is : "+JSON.stringify(datas))
+        // console.log("getMorecategory is : "+JSON.stringify(datas))
         if(datas.count>0){
             $("#category_program_lists").html("")
 

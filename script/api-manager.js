@@ -51,7 +51,14 @@ function getAlbumById(param,successCallBack,errorCallBack){
 //专辑下更多节目列表
 function getAllProgram(param,successCallBack,errorCallBack){
     var album_id=param.album_id
-    ajaxRequest("rest/radio/album/"+album_id+"/program/", "GET", successCallBack, errorCallBack)
+    var page=param.page
+    // console.log("getAllProgram param is : "+JSON.stringify(param))
+    if(page==1){
+        ajaxRequest("rest/radio/album/"+album_id+"/program/", "GET", successCallBack, errorCallBack)
+    }
+    else{
+        ajaxRequest("rest/radio/album/"+album_id+"/program/?page="+page, "GET", successCallBack, errorCallBack)
+    }
 }
 
 //获取相关专辑+换一换
