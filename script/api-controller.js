@@ -72,7 +72,7 @@ function getAnchorAllProgram(anchor_id){
     var param={
         anchor_id:anchor_id
     }
-    program(param,function(datas){
+    programLists(param,function(datas){
         // console.log("album is :"+JSON.stringify(datas))
         if(datas.count>0){
             var data=datas.results

@@ -37,7 +37,7 @@ function album(param,successCallBack,errorCallBack){
 }
 
 //主播下所有可用的节目列表
-function program(param,successCallBack,errorCallBack){
+function programLists(param,successCallBack,errorCallBack){
     var anchor_id=param.anchor_id
     ajaxRequest("rest/radio/anchor/"+anchor_id+"/program/", "GET", successCallBack, errorCallBack)
 }

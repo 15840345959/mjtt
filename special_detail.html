@@ -63,8 +63,10 @@
         {{=it.name}}
     </div>
     <div class="style-special-header-photo aui-text-center aui-font-size-12 aui-row aui-margin-t-5">
-        <img src="{{=it.anchor.avatar}}" />
-        <span><p>&nbsp;{{=it.anchor.nickname}}</p></span>
+        <a href="./anchor.html?anchor_id={{=it.anchor.id}}" >
+            <img src="{{=it.anchor.avatar}}" />
+            <span><p>&nbsp;{{=it.anchor.nickname}}</p></span>
+        </a>
     </div>
     <div class="style-special-header-class aui-text-center aui-font-size-12 aui-row aui-margin-t-5">
         <img src="./image/special_class.png" />
