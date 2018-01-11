@@ -22,10 +22,10 @@ function driveLinkedme(param_path,param_id){
             data.type = 'live';
             data.feature = '电台分享';
             data.channel = 'App分享';
-            data.ios_custom_url = "https://itunes.apple.com/cn/app/%E7%BE%8E%E6%99%AF%E5%90%AC%E5%90%AC-%E5%85%A8%E7%90%83%E6%99%AF%E7%82%B9%E8%AE%B2%E8%A7%A3%E8%AF%AD%E9%9F%B3%E5%AF%BC%E6%B8%B8/id945386876?mt=8"; // 自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，需填写http或https【可选】
-            data.ios_direct_open = "true"; //未安装情况下，设置为true为直接打开ios_custom_url，默认为false【可选】
-            data.android_custom_url = "http://a.app.qq.com/o/simple.jsp?pkgname=com.tommy.mjtt_an_pro&channel=0002160650432d595942&fromcase=60001";// 自定义安卓平台下App的下载地址，需填写http或https【可选】
-            data.android_direct_open = "true"; //设置为true，所有情况下跳转android_custom_url，默认为false【可选】
+            // data.ios_custom_url = "https://itunes.apple.com/cn/app/%E7%BE%8E%E6%99%AF%E5%90%AC%E5%90%AC-%E5%85%A8%E7%90%83%E6%99%AF%E7%82%B9%E8%AE%B2%E8%A7%A3%E8%AF%AD%E9%9F%B3%E5%AF%BC%E6%B8%B8/id945386876?mt=8"; // 自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，需填写http或https【可选】
+            // data.ios_direct_open = "true"; //未安装情况下，设置为true为直接打开ios_custom_url，默认为false【可选】
+            // data.android_custom_url = "http://a.app.qq.com/o/simple.jsp?pkgname=com.tommy.mjtt_an_pro&channel=0002160650432d595942&fromcase=60001";// 自定义安卓平台下App的下载地址，需填写http或https【可选】
+            // data.android_direct_open = "true"; //设置为true，所有情况下跳转android_custom_url，默认为false【可选】
             var value = param_id;
             data.params = '{"path":"'+param_path+'","id":"'+value+'"}';
             linkedme.link(data, function(err, response) {
