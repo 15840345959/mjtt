@@ -7,6 +7,56 @@ function download(){
     }
 }
 
+//深度链接
+function driveLinkedme(param_path,param_id){
+    var initData = {};
+    initData.type = "live";  //表示现在使用线上模式,如果填写"test", 表示测试模式.
+    var linkedme_key='b31a34ca80cfb86c142f62999e44a996';
+    linkedme.init(linkedme_key, initData, function(err, response){
+        if(err){
+            // 初始化失败，返回错误对象err
+            console.log('linkdme err is :'+JSON.stringify(err))
+        } else {
+            // 初始化成功，可以不做处理
+            var data={};
+            data.type = 'live';
+            data.feature = '电台分享';
+            data.channel = 'App分享';
+            data.ios_custom_url = "https://itunes.apple.com/cn/app/%E7%BE%8E%E6%99%AF%E5%90%AC%E5%90%AC-%E5%85%A8%E7%90%83%E6%99%AF%E7%82%B9%E8%AE%B2%E8%A7%A3%E8%AF%AD%E9%9F%B3%E5%AF%BC%E6%B8%B8/id945386876?mt=8"; // 自定义iOS平台下App的下载地址，如果是AppStore的下载地址可以不用填写，需填写http或https【可选】
+            data.ios_direct_open = "true"; //未安装情况下，设置为true为直接打开ios_custom_url，默认为false【可选】
+            data.android_custom_url = "http://a.app.qq.com/o/simple.jsp?pkgname=com.tommy.mjtt_an_pro&channel=0002160650432d595942&fromcase=60001";// 自定义安卓平台下App的下载地址，需填写http或https【可选】
+            data.android_direct_open = "true"; //设置为true，所有情况下跳转android_custom_url，默认为false【可选】
+            var value = param_id;
+            data.params = '{"path":"'+param_path+'","id":"'+value+'"}';
+            linkedme.link(data, function(err, response) {
+                if(err){
+                    console.log("linkdme.link err is : " +JSON.stringify(err))
+                }
+                else{
+                    var html_footer="<footer id=\"footer\">\n" +
+                        "    <a href=\""+response.url+"\" class=\"linkedme\">\n" +
+                        "        <div class=\"aui-tips aui-row\" >\n" +
+                        "            <div class=\"aui-col-xs-2\">\n" +
+                        "                <img src=\"./image/app.png\" />\n" +
+                        "            </div>\n" +
+                        "            <div class=\"aui-col-xs-5 footer-center\">\n" +
+                        "                <div class=\"aui-font-size-14 footer-text-margin-l-5\">美景听听—<span class=\"aui-font-size-12 aui-margin-l-5\">达人说</span></div>\n" +
+                        "                <div class=\"aui-font-size-12 footer-text-margin-l-5\">让旅行更有内涵</div>\n" +
+                        "            </div>\n" +
+                        "            <div class=\"aui-col-xs-5 style-text-open footer-right\">\n" +
+                        "                <img src=\"./image/open.png\" />\n" +
+                        "            </div>\n" +
+                        "        </div>\n" +
+                        "    </a>\n" +
+                        "</footer>";
+                    document.body.innerHTML += html_footer
+                }
+            })
+        }
+    });
+}
+
+
 //获取浏览器参数
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');

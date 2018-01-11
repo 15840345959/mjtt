@@ -9,6 +9,7 @@
     <title>主播详情</title>
     <link rel="stylesheet" type="text/css" href="./css/aui.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="https://static.lkme.cc/linkedme.min.js" ></script>
     <style>
 
     </style>
@@ -17,8 +18,8 @@
 <div class="aui-card-list style-anchor-header-list" id="anchor_detail_content"></div>
 <section class="style-lists aui-padded-b-5">
     <div class="aui-tab" id="tab">
-        <div class="aui-tab-item aui-font-size-16 aui-active" id="anchor_special_count">专辑</div>
-        <div class="aui-tab-item aui-font-size-16">最新节目</div>
+        <div class="aui-tab-item aui-font-size-16 aui-active" id="anchor_special_count" onclick="showSpecial()">专辑</div>
+        <div class="aui-tab-item aui-font-size-16" id="anchor_new_program" onclick="showNewProgram()">最新节目</div>
     </div>
     <div id="anchor_special"></div>
     <div id="anchor_program" hidden>
@@ -28,20 +29,7 @@
 
 <div style="height:3.76rem;"></div>
 
-<footer id="footer">
-    <div class="aui-tips aui-row" onclick="download()">
-        <div class="aui-col-xs-2">
-            <img src="./image/app.png" />
-        </div>
-        <div class="aui-col-xs-5 footer-center">
-            <div class="aui-font-size-14 footer-text-margin-l-5">美景听听—<span class="aui-font-size-12 aui-margin-l-5">达人说</span></div>
-            <div class="aui-font-size-12 footer-text-margin-l-5">让旅行更有内涵</div>
-        </div>
-        <div class="aui-col-xs-5 style-text-open footer-right">
-            <img src="./image/open.png" />
-        </div>
-    </div>
-</footer>
+
 
 <script id="anchor_detail_content_template" type="text/x-dot-template">
     <div class="aui-card-list-content style-anchor-header">
@@ -86,6 +74,7 @@
             </div>
         </div>
     </a>
+    <div class="aui-clearfix"></div>
 </script>
 <script id="anchor_special_count_template" type="text/x-dot-template">
     {{=it}}
@@ -109,17 +98,18 @@
             </div>
         </div>
     </div>
+    <div class="aui-clearfix"></div>
 </script>
 </body>
 <script type="text/javascript" src="./script/jquery.min.js"></script>
 <script type="text/javascript" src="./script/api.js" ></script>
 <script type="text/javascript" src="./script/aui-toast.js" ></script>
 <script type="text/javascript" src="./script/aui-dialog.js" ></script>
-<script type="text/javascript" src="./script/aui-tab.js" ></script>
 <script type="text/javascript" src="./script/common.js" ></script>
 <script type="text/javascript" src="./script/api-manager.js" ></script>
 <script type="text/javascript" src="./script/doT.min.js" ></script>
 <script type="text/javascript" src="./script/api-controller.js" ></script>
+<script type="text/javascript" src="./script/aui-tab.js" ></script>
 <script type="text/javascript">
     $(function(){
         var anchor_id = getQueryString("anchor_id");
@@ -129,24 +119,45 @@
         else{
             loadData(anchor_id)  //加载页面数据
         }
+
+        //深度链接
+        driveLinkedme("anchor",anchor_id)
+
     })
-    var tab = new auiTab({
-        element:document.getElementById("tab"),
-    },function(ret){
-        if(ret.index==1){
-            $("#anchor_special").show();
-            $("#anchor_program").hide();
-        }
-        else{
-            $("#anchor_special").hide();
-            $("#anchor_program").show();
-        }
-    });
+
+    // var tab = new auiTab({
+    //     element:document.getElementById("tab"),
+    // },function(ret){
+    //     if(ret.index==1){
+    //         $("#anchor_special").show();
+    //         $("#anchor_program").hide();
+    //     }
+    //     else{
+    //         $("#anchor_special").hide();
+    //         $("#anchor_program").show();
+    //     }
+    // });
+
+    function showSpecial(){
+        $("#anchor_special").show();
+        $("#anchor_program").hide();
+
+        $("#anchor_special_count").addClass("aui-active")
+        $("#anchor_new_program").removeClass("aui-active")
+    }
+    function showNewProgram(){
+        $("#anchor_special").hide();
+        $("#anchor_program").show();
+
+        $("#anchor_special_count").removeClass("aui-active")
+        $("#anchor_new_program").addClass("aui-active")
+    }
 
     function loadData(anchor_id){
         getAnchorDetail(anchor_id)
         getAnchorAllAlbum(anchor_id)
         getAnchorAllProgram(anchor_id)
     }
+
 </script>
 </html>

@@ -9,6 +9,7 @@
     <title>专辑详情</title>
     <link rel="stylesheet" type="text/css" href="./css/aui.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="https://static.lkme.cc/linkedme.min.js" ></script>
     <style>
 
     </style>
@@ -32,20 +33,7 @@
 
 <div class="style-special-detail-seat"></div>
 
-<footer id="footer">
-    <div class="aui-tips aui-row" onclick="download()">
-        <div class="aui-col-xs-2">
-            <img src="./image/app.png" />
-        </div>
-        <div class="aui-col-xs-5 footer-center">
-            <div class="aui-font-size-14 footer-text-margin-l-5">美景听听—<span class="aui-font-size-12 aui-margin-l-5">达人说</span></div>
-            <div class="aui-font-size-12 footer-text-margin-l-5">让旅行更有内涵</div>
-        </div>
-        <div class="aui-col-xs-5 style-text-open footer-right">
-            <img src="./image/open.png" />
-        </div>
-    </div>
-</footer>
+
 
 <script id="album_detail_content_template" type="text/x-dot-template">
     <div class="aui-card-list-content style-anchor-header">
@@ -215,6 +203,8 @@
         else{
             loadData(album_id)  //加载页面数据
         }
+        //深度链接
+        driveLinkedme("album",album_id)
     })
 
     function loadData(album_id){
