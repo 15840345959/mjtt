@@ -106,11 +106,18 @@
 
             clipboard.on('success', function(e) {
                 console.log(e);
-
+                toast.success({
+                    title:"已复制到剪切板",
+                    duration:2000
+                });
                 $("#footer").show();
             });
 
             clipboard.on('error', function(e) {
+                toast.fail({
+                    title:"复制失败，请手动选择复制",
+                    duration:2000
+                });
                 console.log(e);
             });
 
