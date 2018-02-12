@@ -226,8 +226,9 @@
          * 2018-02-12
          */
         var param = {
-            url: "https://api.gowithtommy.com/special_detail.html"
+            url: window.location.href
         }
+        console.log("param:" + JSON.stringify(param));
         getFwhConfig(param, function (ret) {
             var wx_config = ret.data;
             wx.config({
