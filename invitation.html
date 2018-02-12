@@ -88,26 +88,23 @@
             var param = {
                 url: window.location.href
             }
-            console.log(
-                    "param:" + JSON.stringify(param));
-            getFwhConfig(param,
-                    function (ret) {
-                        var
-                                wx_config = ret.data;
-                        wx.config({
-                            debug: false,
-                            appId: wx_config.app_id,
-                            timestamp: wx_config.timestamp,
-                            nonceStr: wx_config.nonceStr,
-                            signature: wx_config.signature,
-                            jsApiList: [
-                                "onMenuShareTimeline",
-                                "onMenuShareAppMessage"
-                            ]
-                        });
-                    }, null);
+            console.log("param:" + JSON.stringify(param));
+            getFwhConfig(param, function (ret) {
+                var wx_config = ret.data;
+                wx.config({
+                    debug: false,
+                    appId: wx_config.app_id,
+                    timestamp: wx_config.timestamp,
+                    nonceStr: wx_config.nonceStr,
+                    signature: wx_config.signature,
+                    jsApiList: [
+                        "onMenuShareTimeline",
+                        "onMenuShareAppMessage"
+                    ]
+                });
+            }, null);
         }
-    }
+    });
 
     //邀请码
     var invitationCode = "";
