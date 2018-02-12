@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分享</title>
+    <link rel="stylesheet" type="text/css" href="./css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <!--<a class="aui-pull-left aui-btn">-->
+    <!--<span class="style-back-icon">-->
+    <!--<img src="image/back.png" />-->
+    <!--</span>-->
+    <!--</a>-->
+    <div class="aui-title">邀请好友，双方有礼</div>
+</header>
+<section class="aui-content-padded">
+    <div class="style-content-image" id="image">
+        <img src="./image/set.png"/>
+    </div>
+    <span class="style-frame" id="data"></span>
+    <button class="aui-btn aui-btn-danger aui-btn-block" id="button" data-clipboard-action="copy"
+            data-clipboard-target="#data">复制邀请码
+    </button>
+</section>
+<div style="height:4.16rem;"></div>
+<footer id="footer">
+    <div class="aui-tips aui-row" onclick="download()">
+        <div class="aui-col-xs-2">
+            <img src="./image/app.png"/>
+        </div>
+        <div class="aui-col-xs-5 footer-center">
+            <div class="aui-font-size-14 footer-text-margin-l-5">美景听听—<span
+                    class="aui-font-size-12 aui-margin-l-5">达人说</span></div>
+            <div class="aui-font-size-12 footer-text-margin-l-5">让旅行更有内涵</div>
+        </div>
+        <div class="aui-col-xs-5 style-text-open footer-right">
+            <img src="./image/open.png"/>
+        </div>
+    </div>
+</footer>
+</body>
+<script type="text/javascript" src="./script/jquery.min.js"></script>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/aui-toast.js"></script>
+<script type="text/javascript" src="./script/aui-dialog.js"></script>
+<script type="text/javascript" src="./script/aui-tab.js"></script>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/api-manager.js"></script>
+<script type="text/javascript" src="./script/doT.min.js"></script>
+<script type="text/javascript" src="./script/api-controller.js"></script>
+<script type="text/javascript" src="./script/clipboard.min.js"></script>
+<!--2018-02-12-->
+<!--TerryQi-->
+<!--增加服务号分享功能-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+
+    /*
+     * 增加服务号分享功能
+     *
+     * TerryQi
+     *
+     * 2018-02-12
+     */
+    //页面启动后立即进行config设置
+
+    function setWxConfig() {
+        //通过服务号获取分享信息
+        /*
+         * By TerryQi
+         *
+         * 2018-02-12
+         */
+        var param = {
+            url: window.location.href
+        }
+        console.log("param:" + JSON.stringify(param));
+        getFwhConfig(param, function (ret) {
+            var wx_config = ret.data;
+            wx.config({
+                debug: false,
+                appId: wx_config.app_id,
+                timestamp: wx_config.timestamp,
+                nonceStr: wx_config.nonceStr,
+                signature: wx_config.signature,
+                jsApiList: [
+                    "onMenuShareTimeline",
+                    "onMenuShareAppMessage"
+                ]
+            });
+        }, null);
+    }
+
+    //邀请码
+    var invitationCode = "";
+
+    $(function () {
+        //获取微信相关配置
+        setWxConfig();
+
+        $("#image").click(function () {
+            $("#footer").hide();
+        })
+
+        invitationCode = getQueryString("invitationCode");
+        if (invitationCode != null) {
+            $("#data").text(invitationCode);
+        } else {
+            $("#data").text("获取邀请码失败");
+        }
+    });
+
+
+    /*
+     * 进行页面分享-朋友圈
+     *
+     * By TerryQi
+     *
+     */
+    wx.onMenuShareTimeline({
+        title: '你的好友送了你10元红包，点击即可领取', // 分享标题
+        link: 'https://api.gowithtommy.com/invitation.html?invitationCode=' + invitationCode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: 'http://dsyy.isart.me/app.png', // 分享图标
+        success: function (ret) {
+            // 用户确认分享后执行的回调函数
+            console.log("success ret:" + JSON.stringify(ret))
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+
+    wx.onMenuShareAppMessage({
+        title: '你的好友送了你10元红包，点击即可领取', // 分享标题
+        desc: '美景听听中文语音导游，让旅行更有内涵', // 分享描述
+        link: 'https://api.gowithtommy.com/invitation.html?invitationCode=' + invitationCode, // 分享链接
+        imgUrl: 'http://dsyy.isart.me/app.png', // 分享图标
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        success: function () {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+
+    var toast = new auiToast({})
+    $("#button").click(function () {
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { //ios
+            var copyDOM = document.querySelector('#data');  //要复制文字的节点
+            var range = document.createRange();
+            // 选中需要复制的节点
+            range.selectNode(copyDOM);
+            // 执行选中元素
+            window.getSelection().addRange(range);
+            // 执行 copy 操作
+            var successful = document.execCommand('copy');
+            try {
+                if (successful) {
+                    toast.success({
+                        title: "已复制到剪切板",
+                        duration: 2000
+                    });
+                }
+                else {
+                    toast.fail({
+                        title: "复制失败，请手动选择复制",
+                        duration: 2000
+                    });
+                }
+
+                $("#footer").show();
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+            // 移除选中的元素
+            window.getSelection().removeAllRanges();
+        } else {
+            var clipboard = new Clipboard('#button');
+
+            clipboard.on('success', function (e) {
+                console.log(e);
+                toast.success({
+                    title: "已复制到剪切板",
+                    duration: 2000
+                });
+                $("#footer").show();
+            });
+
+            clipboard.on('error', function (e) {
+                toast.fail({
+                    title: "复制失败，请手动选择复制",
+                    duration: 2000
+                });
+                console.log(e);
+            });
+
+        }
+    });
+
+</script>
+</html>
