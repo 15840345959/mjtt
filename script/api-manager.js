@@ -31,7 +31,7 @@ function ajaxRequest(url, method, successCallBack, errorCallBack, loadding) {
  *
  * 2018-02-12
  */
-function ajaxRequestImp(url, param, method, callBack) {
+    function ajaxRequestImp(url, param, method, callBack) {
     console.log("url:" + url + " method:" + method + " param:" + JSON.stringify(param));
     $.ajax({
         type: method,  //提交方式
