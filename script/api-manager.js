@@ -31,7 +31,7 @@ function ajaxRequest(url, method, successCallBack, errorCallBack, loadding) {
  *
  * 2018-02-12
  */
-    function ajaxRequestImp(url, param, method, callBack) {
+function ajaxRequestImp(url, param, method, callBack) {
     console.log("url:" + url + " method:" + method + " param:" + JSON.stringify(param));
     $.ajax({
         type: method,  //提交方式
@@ -62,6 +62,11 @@ function getFwhConfig(param, successCallBack, errorCallBack) {
     ajaxRequestImp(SERVER_URL + "rest/wechat/config/", param, "POST", successCallBack);
 }
 
+
+//获取主播详细信息
+function anchorImp(param, successCallBack, errorCallBack) {
+    ajaxRequestImp(SERVER_URL + "rest/radio/anchor/" + param.anchor_id, {}, "GET", successCallBack)
+}
 
 //获取主播详细信息
 function anchor(param, successCallBack, errorCallBack) {

@@ -1,3 +1,4 @@
+
 /*
  * 增加服务号分享功能
  *
@@ -41,7 +42,7 @@ function getAnchorDetail(anchor_id) {
         anchor_id: anchor_id
     }
     anchor(param, function (data) {
-        // console.log("anchor is :"+JSON.stringify(data))
+        console.log("anchor is :" + JSON.stringify(data))
         if (data) {
             var title = data.nickname + "-美景听听"
             $("title").html(title);
