@@ -66,41 +66,47 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 
-
-    /*
-     * 增加服务号分享功能
-     *
-     * TerryQi
-     *
-     * 2018-02-12
-     */
-    //页面启动后立即进行config设置
-
-    function setWxConfig() {
-        //通过服务号获取分享信息
+    wx.ready(function () {
         /*
-         * By TerryQi
+         * 增加服务号分享功能
+         *
+         * TerryQi
          *
          * 2018-02-12
          */
-        var param = {
-            url: window.location.href
+        //页面启动后立即进行config设置
+
+        function
+
+        setWxConfig() {
+            //通过服务号获取分享信息
+            /*
+             * By TerryQi
+             *
+             * 2018-02-12
+             */
+            var param = {
+                url: window.location.href
+            }
+            console.log(
+                    "param:" + JSON.stringify(param));
+            getFwhConfig(param,
+                    function (ret) {
+                        var
+                                wx_config = ret.data;
+                        wx.config({
+                            debug: false,
+                            appId: wx_config.app_id,
+                            timestamp: wx_config.timestamp,
+                            nonceStr: wx_config.nonceStr,
+                            signature: wx_config.signature,
+                            jsApiList: [
+                                "onMenuShareTimeline",
+                                "onMenuShareAppMessage"
+                            ]
+                        });
+                    }, null);
         }
-        console.log("param:" + JSON.stringify(param));
-        getFwhConfig(param, function (ret) {
-            var wx_config = ret.data;
-            wx.config({
-                debug: false,
-                appId: wx_config.app_id,
-                timestamp: wx_config.timestamp,
-                nonceStr: wx_config.nonceStr,
-                signature: wx_config.signature,
-                jsApiList: [
-                    "onMenuShareTimeline",
-                    "onMenuShareAppMessage"
-                ]
-            });
-        }, null);
     }
 
     //邀请码

@@ -1,3 +1,40 @@
+/*
+ * 增加服务号分享功能
+ *
+ * TerryQi
+ *
+ * 2018-02-12
+ */
+//页面启动后立即进行config设置
+
+function setWxConfig() {
+    //通过服务号获取分享信息
+    /*
+     * By TerryQi
+     *
+     * 2018-02-12
+     */
+    var param = {
+        url: window.location.href
+    }
+    console.log("param:" + JSON.stringify(param));
+    getFwhConfig(param, function (ret) {
+        var wx_config = ret.data;
+        wx.config({
+            debug: false,
+            appId: wx_config.app_id,
+            timestamp: wx_config.timestamp,
+            nonceStr: wx_config.nonceStr,
+            signature: wx_config.signature,
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage"
+            ]
+        });
+    }, null);
+}
+
+
 //获取主播详细信息
 function getAnchorDetail(anchor_id) {
     var param = {
@@ -23,6 +60,9 @@ function getAnchorDetail(anchor_id) {
             // console.log("anchor new is :"+JSON.stringify(data))
             var interText = doT.template($("#anchor_detail_content_template").text())
             $("#anchor_detail_content").html(interText(data))
+
+            //进行微信分享配置
+            setWxConfig();
         }
         else {
 
@@ -143,6 +183,8 @@ function getAlbumDetail(album_id) {
             }
             getAllProgramByAlbum(program)
             getMoreProgram(data.category.id)
+            //进行微信分享配置
+            setWxConfig();
         }
         else {
 
