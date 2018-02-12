@@ -60,7 +60,6 @@ function getAnchorDetail(anchor_id) {
             // console.log("anchor new is :"+JSON.stringify(data))
             var interText = doT.template($("#anchor_detail_content_template").text())
             $("#anchor_detail_content").html(interText(data))
-
             //进行微信分享配置
             setWxConfig();
         }
