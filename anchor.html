@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>主播详情</title>
-    <link rel="stylesheet" type="text/css" href="./css/aui.css" />
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <script src="https://static.lkme.cc/linkedme.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="./css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <script src="https://static.lkme.cc/linkedme.min.js"></script>
     <style>
 
     </style>
@@ -30,12 +32,11 @@
 <div style="height:3.76rem;"></div>
 
 
-
 <script id="anchor_detail_content_template" type="text/x-dot-template">
     <div class="aui-card-list-content style-anchor-header">
-        <img src="./image/anchor_background.png" />
+        <img src="./image/anchor_background.png"/>
         <span class="style-anchor-photo">
-            <img src="{{=it.avatar}}" />
+            <img src="{{=it.avatar}}"/>
         </span>
     </div>
     <div class="aui-card-list-content style-acnchor-nickname aui-font-size-16 aui-text-center">
@@ -54,7 +55,7 @@
     <a href="./special_detail.html?album_id={{=it.id}}">
         <div class="style-special-list">
             <div class="style-special-list-cover">
-                <img src="{{=it.image_url}}" />
+                <img src="{{=it.image_url}}"/>
                 <span class="aui-font-size-12">{{=it.program_total}}集</span>
             </div>
             <div class="style-special-list-content">
@@ -69,7 +70,7 @@
                     {{?}}
                 </div>
                 <div class="style-special-list-content-play aui-font-size-12">
-                    <img src="./image/play_count.png" />{{=it.play_times}}
+                    <img src="./image/play_count.png"/>{{=it.play_times}}
                 </div>
             </div>
         </div>
@@ -81,10 +82,11 @@
 </script>
 <script id="anchor_program_template" type="text/x-dot-template">
     <div class="style-program-list">
-        <div class="style-program-list-cover" id="program_play_{{=it.id}}" audio-index="{{=it.audio}}" onclick="playMusic({{=it.id}})">
-            <img src="{{=it.image}}" />
+        <div class="style-program-list-cover" id="program_play_{{=it.id}}" audio-index="{{=it.audio}}"
+             onclick="playMusic({{=it.id}})">
+            <img src="{{=it.image}}"/>
             <span class="style-program-list-cover-play">
-                    <img src="./image/play_start.png" />
+                    <img src="./image/play_start.png"/>
                 </span>
         </div>
         <div class="style-program-list-content">
@@ -93,8 +95,8 @@
                 <div class="aui-col-xs-5 aui-text-right aui-font-size-12 aui-ellipsis-1">{{=it.publish_date}}</div>
             </div>
             <div class="style-program-list-content-play aui-font-size-12">
-                <span><img src="./image/play_count.png" />{{=it.play_times}}</span>
-                <span><img src="./image/time_count.png" />{{=it.duration}}</span>
+                <span><img src="./image/play_count.png"/>{{=it.play_times}}</span>
+                <span><img src="./image/time_count.png"/>{{=it.duration}}</span>
             </div>
         </div>
     </div>
@@ -102,27 +104,35 @@
 </script>
 </body>
 <script type="text/javascript" src="./script/jquery.min.js"></script>
-<script type="text/javascript" src="./script/api.js" ></script>
-<script type="text/javascript" src="./script/aui-toast.js" ></script>
-<script type="text/javascript" src="./script/aui-dialog.js" ></script>
-<script type="text/javascript" src="./script/common.js" ></script>
-<script type="text/javascript" src="./script/api-manager.js" ></script>
-<script type="text/javascript" src="./script/doT.min.js" ></script>
-<script type="text/javascript" src="./script/api-controller.js" ></script>
-<script type="text/javascript" src="./script/aui-tab.js" ></script>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/aui-toast.js"></script>
+<script type="text/javascript" src="./script/aui-dialog.js"></script>
+<!--2018-02-12-->
+<!--TerryQi-->
+<!--增加服务号分享功能-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/api-manager.js"></script>
+<script type="text/javascript" src="./script/doT.min.js"></script>
+<script type="text/javascript" src="./script/api-controller.js"></script>
+<script type="text/javascript" src="./script/aui-tab.js"></script>
 <script type="text/javascript">
-    $(function(){
-        var anchor_id = getQueryString("anchor_id");
-        if(anchor_id==null){
+
+
+    var anchor_id;
+
+    //入口函数
+    $(function () {
+        anchor_id = getQueryString("anchor_id");
+        if (anchor_id == null) {
             $("body").html(nothing("获取主播详情失败"))
         }
-        else{
+        else {
             loadData(anchor_id)  //加载页面数据
         }
 
         //深度链接
-        driveLinkedme("anchor",anchor_id)
-
+        driveLinkedme("anchor", anchor_id)
     })
 
     // var tab = new auiTab({
@@ -138,14 +148,14 @@
     //     }
     // });
 
-    function showSpecial(){
+    function showSpecial() {
         $("#anchor_special").show();
         $("#anchor_program").hide();
 
         $("#anchor_special_count").addClass("aui-active")
         $("#anchor_new_program").removeClass("aui-active")
     }
-    function showNewProgram(){
+    function showNewProgram() {
         $("#anchor_special").hide();
         $("#anchor_program").show();
 
@@ -153,11 +163,13 @@
         $("#anchor_new_program").addClass("aui-active")
     }
 
-    function loadData(anchor_id){
+
+    function loadData(anchor_id) {
         getAnchorDetail(anchor_id)
         getAnchorAllAlbum(anchor_id)
         getAnchorAllProgram(anchor_id)
     }
+
 
 </script>
 </html>
