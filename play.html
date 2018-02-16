@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>视频</title>
+    <link rel="stylesheet" type="text/css" href="./css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <style>
+        body{
+            background-image: url(image/play_background.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        /*.test{*/
+            /*width:400px;*/
+            /*height:20px;*/
+            /*position:fixed;*/
+            /*!*top:92%;*!*/
+            /*margin-left: 12%;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav play-header">
+    <a class="aui-pull-left aui-btn">
+       <img class="play-header-image" src="image/play_back.png"/>
+    </a>
+    <div class="aui-title play-header-title">荣军院大教堂</div>
+</header>
+<section class="aui-content-padded play-content">
+    <div class="aui-content ">
+        Invalides Cathedral
+    </div>
+</section>
+<div class="play-button">
+    <img src="image/play_startbutton.png"/>
+</div>
+<div class="test"></div>
+
+
+</body>
+
+<script type="text/javascript" src="./script/jquery.min.js"></script>
+<script type="text/javascript" src="./script/jquery-PlayBar.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        var action=true;
+        $('.play-button').click(function(){
+            if(action){
+                $.playBar.Stop();
+                action=false;
+                $(this).html('<div class="end-button">' +
+                    '<img src="./image/play_endbutton.png"/>' +
+                    '</div>'+'<div class="test"></div>');
+            }else{
+                $.playBar.Begin();
+                action=true;
+                $(this).html('<div class="end-button">' +
+                    '<img src="image/play_startbutton.png"/>' +
+                    '</div>'+'<div class="test"></div>');
+            }
+        });
+        $.playBar.addBar($('.test'),400*60);//第一个参数是需要显示播放器的容器，第二个参数为时间，单位毫秒
+        $.playBar.changeBarColor("#CC0000");//设置进度条颜色
+    });
+</script>
+
+</html>

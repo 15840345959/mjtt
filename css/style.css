@@ -645,6 +645,143 @@ footer{
         padding-top:0rem;
     }
 
+    /*景点信息*/
+    .spots-mes-name {
+        margin-top: 2.79rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 22px;
+        color: #767676;
+    }
+    .spots-mes-ticket{
+        width: 91%;
+        margin-left: 4.5%;
+    }
+    .spots-mes-ticket .aui-list-item-media{
+        width: 4rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+        margin-top: -2.1rem;
+    }
+    .spots-mes-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-season span{
+        color: #000000;
+    }
+    .spots-mes-low-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-low-season span{
+        color: #000000;
+    }
+    .spots-mes-daily-date{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+        /*padding: 0;*/
+    }
+    .spots-mes-daily-date span{
+        font-size: 14px;
+        margin-right: 3.4rem;
+        color: #E31C17;
+    }
+    .spots-mes-playtime{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-recommend-time{
+        margin-right: 0.9rem;
+    }
+    .spots-mes-recommend-time span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-tel-num{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-tel-num span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        margin-right: 3.4rem;
+        color: #E31C17;
+    }
+    .spots-mes-route{
+        width: 91%;margin-left: 4.5%;
+    }
+    .spots-mes-route-mes{
+        position: relative;
+        padding: 0.5rem 0;
+        padding-right: 0.75rem;
+        display: inherit;
+        align-items: flex-start;
+        -webkit-box-align: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        width: 3.6rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+        margin-top: -23%;
+    }
+    .spots-mes-transit{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-transit span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #000000;
+    }
+    .spots-mes-self-driving{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-self-driving span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #000000;
+    }
+    .spots-mes-footer{
+        background: #F5F5F5;
+    }
+    .spots-mes-footer-play{
+        width: 3rem;
+    }
+    .aui-img-round{
+        width: 2rem;
+        margin-left: 18%;
+    }
+    .aui-list-item-inner{
+        margin-top: 0.5rem;
+    }
+    .spots-mes-footer-play-img{
+        width: 2rem;
+        height: 2rem;
+        margin-left:4%;
+    }
+    .aui-media-list .aui-list-item-inner{
+        padding-top: 0rem;
+    }
+
+
+
+
+
+
+
 }
 @media (min-width:375px){
     .style-special-list .style-special-list-cover img{
@@ -683,6 +820,140 @@ footer{
     .footer-center{
         padding-top:0.5rem;
     }
+
+    /*景点信息*/
+    .spots-mes-name {
+        margin-top: 2.79rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 22px;
+        color: #767676;
+    }
+    .spots-mes-ticket{
+        width: 91%;
+        margin-left: 4.5%;
+    }
+    .spots-mes-ticket .aui-list-item-media{
+        width: 4rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+        margin-top: -2.1rem;
+    }
+    .spots-mes-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-season span{
+        color: #000000;
+    }
+    .spots-mes-low-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-low-season span{
+        color: #000000;
+    }
+    .spots-mes-daily-date{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-daily-date span{
+        font-size: 14px;
+        margin-right: 6.2rem;
+        color: #E31C17;
+    }
+    .spots-mes-playtime{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-recommend-time{
+        margin-right: 3.7rem;
+    }
+    .spots-mes-recommend-time span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-tel-num{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-tel-num span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        margin-right: 6.2rem;
+        color: #E31C17;
+    }
+    .spots-mes-route{
+        width: 91%;margin-left: 4.5%;
+    }
+    .spots-mes-route-mes{
+        position: relative;
+        padding: 0.5rem 0;
+        padding-right: 0.75rem;
+        display: inherit;
+        align-items: flex-start;
+        -webkit-box-align: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        width: 3.6rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+        margin-top: -23%;
+    }
+    .spots-mes-transit{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-transit span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #000000;
+    }
+    .spots-mes-self-driving{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-self-driving span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #000000;
+    }
+    .spots-mes-footer{
+        background: #F5F5F5;
+    }
+    .spots-mes-footer-play{
+        width: 3rem;
+    }
+    .aui-img-round{
+        width: 2rem;
+        margin-left: 18%;
+    }
+    .aui-list-item-inner{
+        margin-top: 0.5rem;
+    }
+    .spots-mes-footer-play-img{
+        width: 2rem;height: 2rem;margin-left: 18%;
+    }
+    .aui-media-list .aui-list-item-inner{
+        padding-top: 0rem;
+    }
+
+
+
+
+
+
 }
 @media (min-width:412px){
     .style-special-list{
@@ -761,6 +1032,137 @@ footer{
     .footer-text-margin-l-5{
         margin-left: 1rem !important;
     }
+
+    /*景点信息*/
+    .spots-mes-name {
+        margin-top: 2.79rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 22px;
+        color: #767676;
+    }
+    .spots-mes-ticket{
+        width: 91%;
+        margin-left: 4.5%;
+    }
+    .spots-mes-ticket .aui-list-item-media{
+        width: 4rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+        margin-top: -2.1rem;
+    }
+    .spots-mes-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-season span{
+        color: #000000;
+    }
+    .spots-mes-low-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-low-season span{
+        color: #000000;
+    }
+    .spots-mes-daily-date{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-daily-date span{
+        font-size: 14px;
+        margin-right: 7.2rem;
+        color: #E31C17;
+    }
+    .spots-mes-playtime{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-recommend-time{
+        margin-right: 4.7rem;
+    }
+    .spots-mes-recommend-time span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-tel-num{
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+    }
+    .spots-mes-tel-num span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        margin-right: 7.2rem;
+        color: #E31C17;
+    }
+    .spots-mes-route{
+        width: 91%;margin-left: 4.5%;
+    }
+    .spots-mes-route-mes{
+        position: relative;
+        padding: 0.5rem 0;
+        padding-right: 0.75rem;
+        display: inherit;
+        align-items: flex-start;
+        -webkit-box-align: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        width: 4rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #000000;
+        margin-top: -23%;
+    }
+    .spots-mes-transit{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-transit span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #000000;
+    }
+    .spots-mes-self-driving{
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #E31C17;
+    }
+    .spots-mes-self-driving span{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #000000;
+    }
+    .spots-mes-footer{
+        background: #F5F5F5;
+    }
+    .spots-mes-footer-play{
+        width: 3rem;
+    }
+    .aui-img-round{
+        width: 2rem;
+        margin-left: 18%;
+    }
+    .aui-list-item-inner{
+        margin-top: 0.5rem;
+    }
+    .spots-mes-footer-play-img{
+        width: 2rem;height: 2rem;margin-left: 18%;
+    }
+    .aui-media-list .aui-list-item-inner{
+        padding-top: 0rem;
+    }
+
+
+
 }
 @media (min-width:768px){
     .style-anchor-photo img{
@@ -905,6 +1307,143 @@ footer{
     .footer-right{
         margin-top:-0.2rem;
     }
+
+    /*景点信息*/
+    .spots-mes-header-title {
+        font-family: PingFangSC-Semibold;
+        font-size: 40px;
+    }
+    .spots-mes-name{
+        margin-top: 3.2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 46px;
+        color: #767676;
+    }
+    .spots-mes-ticket{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+    .spots-mes-ticket .aui-list-item-media{
+        width: 6rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+        margin-top: -2.5rem;
+    }
+    .spots-mes-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;;
+        color: #E31C17;
+    }
+    .spots-mes-season span{
+        color: #000000;
+    }
+    .spots-mes-low-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;;
+        color: #E31C17;
+    }
+    .spots-mes-low-season span{
+        color: #000000;
+    }
+    .spots-mes-daily-date{
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+    }
+    .spots-mes-daily-date span{
+        font-size: 28px;
+        margin-right: 12.8rem;
+        color: #E31C17;
+    }
+    .spots-mes-playtime{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;
+        color: #000000;
+    }
+    .spots-mes-recommend-time{
+        margin-right: 10rem;
+    }
+    .spots-mes-recommend-time span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        color: #E31C17;
+    }
+    .spots-mes-tel-num{
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+    }
+    .spots-mes-tel-num span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        margin-right: 12.5rem;
+        color: #E31C17;
+    }
+    .spots-mes-route{
+        width: 95%;margin-left: 2.5%;
+    }
+    .spots-mes-route-mes{
+        position: relative;
+        padding: 0.5rem 0;
+        padding-right: 1.5rem;
+        display: inherit;
+        align-items: flex-start;
+        -webkit-box-align: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        width: 5rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+        margin-top: -15%;
+    }
+    .spots-mes-transit{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;
+        color: #E31C17;
+    }
+    .spots-mes-transit span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        color: #000000;
+    }
+    .spots-mes-self-driving{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;
+        color: #E31C17;
+    }
+    .spots-mes-self-driving span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        color: #000000;
+    }
+    .spots-mes-footer{
+        background: #F5F5F5;
+    }
+    .spots-mes-footer-play{
+        width: 5rem;
+    }
+    .aui-img-round{
+        width: 2rem;
+        margin-left: 18%;
+    }
+    .aui-list-item-inner{
+        margin-top: 0.1rem;
+        font-size: 30px;
+    }
+    .spots-mes-footer-play-img{
+        width: 2rem;height: 2rem;margin-left: 31%;
+    }
+    .aui-media-list .aui-list-item-inner{
+        padding-top: 0rem;
+    }
+
+
+
+
 }
 @media (min-width:1024px){
     .style-anchor-photo img{
@@ -1020,6 +1559,144 @@ footer{
     .style-text-open img{
         float:right;
     }
+
+    /*景点信息*/
+    .spots-mes-header-title{
+        font-family: PingFangSC-Semibold;
+        font-size: 40px;
+    }
+    .spots-mes-name{
+        margin-top: 4.2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 46px;
+        color: #767676;
+    }
+    .spots-mes-ticket{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+    .spots-mes-ticket .aui-list-item-media{
+        width: 6rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+        margin-top: -2.5rem;
+    }
+    .spots-mes-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;;
+        color: #E31C17;
+    }
+    .spots-mes-season span{
+        color: #000000;
+    }
+    .spots-mes-low-season{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;;
+        color: #E31C17;
+    }
+    .spots-mes-low-season span{
+        color: #000000;
+    }
+    .spots-mes-daily-date{
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+    }
+    .spots-mes-daily-date span{
+        font-size: 28px;
+        margin-right: 22.8rem;
+        color: #E31C17;
+    }
+    .spots-mes-playtime{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;
+        color: #000000;
+    }
+    .spots-mes-recommend-time{
+        margin-right: 20rem;
+    }
+    .spots-mes-recommend-time span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        color: #E31C17;
+    }
+    .spots-mes-tel-num{
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+    }
+    .spots-mes-tel-num span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        margin-right: 22.5rem;
+        color: #E31C17;
+    }
+    .spots-mes-route{
+        width: 95%;margin-left: 2.5%;
+    }
+    .spots-mes-route-mes{
+        position: relative;
+        padding: 0.5rem 0;
+        padding-right: 1.5rem;
+        display: inherit;
+        align-items: flex-start;
+        -webkit-box-align: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        width: 5rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 30px;
+        color: #000000;
+        margin-top: -8%;
+    }
+    .spots-mes-transit{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;
+        color: #E31C17;
+    }
+    .spots-mes-transit span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        color: #000000;
+    }
+    .spots-mes-self-driving{
+        font-family: PingFangSC-Semibold;
+        font-size: 28px;
+        color: #E31C17;
+    }
+    .spots-mes-self-driving span{
+        font-family: PingFangSC-Regular;
+        font-size: 28px;
+        color: #000000;
+    }
+    .spots-mes-footer{
+        background: #F5F5F5;
+    }
+    .spots-mes-footer-play{
+        width: 5rem;
+    }
+    .aui-img-round{
+        width: 2rem;
+        margin-left: 18%;
+    }
+    .aui-list-item-inner{
+        margin-top: 0.1rem;
+        font-size: 30px;
+    }
+    .spots-mes-footer-play-img{
+        width: 2rem;
+        height: 2rem;
+        margin-left: 46%;
+    }
+    .aui-media-list .aui-list-item-inner{
+        padding-top: 0rem;
+    }
+
+
+
 }
 .aui-grid [class*=aui-col-]{
     padding:0.5rem 0;
@@ -1039,3 +1716,141 @@ footer{
     letter-spacing:0.2rem;
     line-height: 4rem;
 }
+
+
+/* By mtt */
+/*视频播放*/
+.play-header{
+    background-color: unset;
+    color: #FFFFFF;
+    background-image:none;
+}
+.play-header-title{
+    font-family: PingFangSC-Semibold;
+    font-size: 22px;
+}
+.play-header-image{
+    height: 1rem;
+    width: 2rem;
+    margin-left: 0.5rem;
+}
+.play-content{
+    color: #ffffff;
+    margin: -0.25rem;
+    text-align: center;
+}
+.play-button{
+    width: 4.44rem;
+    margin-top: 119%;
+    margin-left: 40%;
+
+}
+.end-button{
+    width: 4.44rem;
+    margin-top: 119%;
+    /*margin-left: 40%;*/
+}
+.test{
+    width:400px;
+    height:20px;
+    position:fixed;
+    /*top:92%;*/
+    margin-left: 12%;
+}
+/*控制播放停止按钮*/
+.BarControl{
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    display:inline-block;
+}
+.BarBeginTime{
+    width:40px;
+    height:20px;
+    color:#000000;
+    font-size:12px;
+    line-height:20px;
+    font-family: PingFangSC-Medium;
+}
+.TheBar{
+    position:relative;
+    width:calc(100% - 114px);
+    margin-left:2px;
+    height:4px;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    background:#D4D4D4;
+    overflow:visible;
+}
+.TheColorBar{
+    width:0px;
+    border-radius:0px;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+    height:100%;
+    background:#CC0000 ;
+    float:left;
+}
+.TimeBall{
+    width:10px;
+    height:10px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background:#CC0000 ;
+    position:absolute;
+    left:0px;
+    top:-3px;
+    z-index:2;
+    cursor:pointer;
+}
+.BarTimeBall{
+    width:10px;
+    height:10px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background:#3498DB;
+    position:absolute;
+    left:0px;
+    top:-3px;
+    z-index:2;
+    cursor:pointer;
+}
+.BarFinishTime{
+    width:40px;
+    height:20px;
+    color:#000000;
+    font-size:12px;
+    line-height:20px;
+    margin-left: 64%;
+    margin-top: -6%;
+    font-family: PingFangSC-Medium;
+}
+
+/*景点信息*/
+.spots-mes-banner{
+    width: 15.5%;
+    margin-top: -25%;
+    margin-left: 42%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

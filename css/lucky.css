@@ -1,0 +1,393 @@
+body {
+    overflow-x: hidden;
+    background-color: #FED887;
+}
+
+/*375   iphone6   iphone7    iphone8    iphoneX*/
+.banner {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    /*height: 601px;*/
+}
+
+.banner .turnplate img.pointer {
+    position: absolute;
+    width: 121px;
+    height: 121px;
+    margin: -254px auto;
+    left: 34%;
+}
+
+.banner .turnplate canvas.item {
+    width: 100%;
+    margin-top: 118.5px;
+}
+
+.banner .turnplate {
+    background-image: url('../image/lucky_turntable.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 539px;
+}
+
+.lucky-turntable {
+    background-image: url('../image/lucky_background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.lucky-turntable-header {
+    background-color: #FFFFFF;
+    color: #000000;
+    background-image: none;
+}
+
+.lucky-header-title {
+    font-family: PingFangSC-Semibold;
+    font-size: 22px;
+}
+
+.lucky-winning-record {
+    max-width: 90%;
+    margin-left: 5%;
+}
+.lucky-winning-record-name{
+    margin-top: -2rem;
+    font-family: STYuanti-SC-Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-left: 14px;
+}
+.lucky-winning-record-date{
+    font-family: STYuanti-SC-Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-left: 159px;
+    margin-top: -22px;
+}
+.lucky-activity-rules {
+    max-width: 95%;
+    margin-left: 1%;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+.lucky-activity-rules-p1{
+    font-family: STYuanti-SC-Bold;
+    font-size: 14px;
+    color: #9C2B21;
+    margin-top: -18.5rem;
+    margin-left: 2rem;
+
+}
+.lucky-activity-rules-p2{
+    margin-left: 2rem;
+    margin-top: 1.14rem;
+    font-family: STYuanti-SC-Bold;
+    font-size: 14px;
+    color: #9C2B21;
+}
+/*转盘指针*/
+.lucky-pointer{
+    position: absolute;
+    margin-top: 7.6rem;
+    margin-left: 8.5rem;
+    width: 1.5rem;
+}
+
+/*320px   iphone5  及一些安卓*/
+@media (max-width: 320px) {
+    .banner .turnplate canvas.item {
+        margin-top: 100.5px;
+    }
+
+    .banner .turnplate img.pointer {
+        width: 109px;
+        height: 109px;
+        margin: -220px auto;
+    }
+
+    .banner .turnplate {
+        height: 458px;
+    }
+    /*转盘指针*/
+    .lucky-pointer{
+        margin-top: 6.6rem;
+        margin-left: 7.2rem;
+    }
+    /*中奖记录*/
+    .lucky-winning-record-date{
+        margin-left: 135px;
+    }
+    /*活动规则*/
+    .lucky-activity-rules-p1{
+        margin-top: -16.5rem;
+    }
+    .lucky-activity-rules-p2{
+        margin-top: 0.4rem;
+    }
+
+}
+/*360px */
+@media (min-width: 360px) {
+    .banner .turnplate canvas.item {
+        margin-top: 113.5px;
+    }
+    .banner .turnplate img.pointer {
+        margin: -248px auto;
+    }
+    .banner .turnplate{
+        height: 516px;
+    }
+    /*指针*/
+    .lucky-pointer{
+        margin-top: 7.2rem;
+        margin-left: 8.2rem;
+    }
+    /*活动规则*/
+    .lucky-activity-rules-p1{
+        margin-top: -18rem;
+    }
+    .lucky-activity-rules-p2{
+        margin-top: 0.8rem;
+    }
+
+}
+/*375px */
+@media (min-width: 375px) {
+    .banner .turnplate canvas.item {
+        margin-top: 118.5px;
+    }
+    .banner .turnplate img.pointer {
+        margin: -255px auto;
+    }
+    .lucky-activity-rules{
+        margin-bottom: 5rem;
+    }
+    /*指针*/
+    .lucky-pointer{
+        margin-top: 7.8rem;
+        margin-left: 8.5rem;
+    }
+
+}
+/*412px Nexus 5X*/
+@media (min-width: 412px) {
+    .banner .turnplate {
+        height: 590px;
+    }
+    .banner .turnplate canvas.item {
+        margin-top: 130.5px;
+    }
+    .banner .turnplate img.pointer {
+        width: 132px;
+        height: 132px;
+        margin: -279px auto;
+        left: 34%;
+    }
+    /*指针*/
+    .lucky-pointer{
+        margin-left: 8.9rem;
+    }
+    /*中奖纪录*/
+    .lucky-winning-record-name{
+        font-size: 16px;
+    }
+    .lucky-winning-record-date{
+        font-size: 16px;
+        margin-top: -24px;
+        margin-left: 170px;
+    }
+    /*活动规则*/
+    .lucky-activity-rules{
+        margin-top: 0.8rem;
+    }
+    .lucky-activity-rules-p1{
+        font-size: 16px;
+        margin-top: -18.5rem;
+    }
+    .lucky-activity-rules-p2{
+        font-size: 16px;
+        margin-top: 0.6rem;
+    }
+
+}
+/*414px*/
+@media (min-width: 414px) {
+    .banner .turnplate {
+        height: 594px;
+    }
+    .banner .turnplate canvas.item {
+        margin-top: 131.5px;
+    }
+    .banner .turnplate img.pointer {
+        width: 134px;
+        height: 134px;
+        margin: -281px auto;
+        left: 34%;
+    }
+    /*指针图片*/
+    .lucky-pointer{
+        margin-top: 8rem;
+        margin-left: 9rem;
+    }
+    /*中奖记录*/
+    .lucky-winning-record-date{
+        margin-left: 200px;
+    }
+    /*活动规则*/
+    .lucky-activity-rules-p1{
+        margin-top: -19rem;
+        font-size: 16px;
+    }
+    .lucky-activity-rules-p2{
+        font-size: 16px;
+    }
+
+}
+/*768px  ipad*/
+@media (min-width:768px){
+    .banner .turnplate {
+        height: 1102px;
+    }
+    .banner .turnplate canvas.item {
+        margin-top: 242.5px;
+    }
+    .banner .turnplate img.pointer {
+        width: 247px;
+        height: 247px;
+        margin: -515px auto;
+        left: 34%;
+    }
+    .aui-bar-nav{
+        line-height: 3.25rem;
+    }
+    .aui-bar{
+        min-height: 3.25rem;
+    }
+    .aui-bar-nav .aui-btn{
+        height: 3.25rem;
+    }
+    .lucky-header-title{
+        font-size: 40px;
+    }
+    /*指针*/
+    .lucky-pointer{
+        margin-top: 12.3rem;
+        margin-left: 13.8rem;
+        width: 2.2rem;
+    }
+    /*中奖记录*/
+    .lucky-winning-record-name{
+        font-size: 26px;
+        margin-top: -3rem;
+    }
+    .lucky-winning-record-date{
+        margin-left: 349px;
+        margin-top: -39px;
+        font-size: 26px;
+    }
+    /*活动规则*/
+    .lucky-activity-rules{
+        margin-top: 1.5rem;
+        margin-bottom: 7rem;
+        margin-left: 5%;
+        max-width: 90%;
+    }
+    .lucky-activity-rules-p1{
+        margin-top: -28rem;
+        font-size: 28px;
+    }
+    .lucky-activity-rules-p2{
+        font-size: 28px;
+        margin-top: 1rem;
+    }
+
+
+
+}
+/*1024   ipad   pro*/
+@media (min-width:1024px){
+    .banner .turnplate {
+        height: 1468px;
+    }
+    .banner .turnplate canvas.item {
+        margin-top: 324.5px;
+    }
+    .banner .turnplate img.pointer {
+        width: 330px;
+        height: 330px;
+        margin: -684px auto;
+    }
+    /*指针*/
+    .lucky-pointer{
+        margin-top: 16.5rem;
+        margin-left: 18.5rem;
+        width: 2.5rem;
+    }
+    /*中奖记录*/
+    .lucky-winning-record-name{
+        font-size: 29px;
+        margin-top: -4rem;
+    }
+    .lucky-winning-record-date{
+        margin-left: 536px;
+        margin-top: -42px;
+        font-size: 29px;
+    }
+    /*活动规则*/
+    .lucky-activity-rules{
+        margin-top: 2.2rem;
+        margin-left: 3%;
+        margin-bottom: 10rem;
+    }
+    .lucky-activity-rules-p1{
+        margin-top: -37rem;
+        font-size: 32px;
+        margin-left: 4rem;
+    }
+    .lucky-activity-rules-p2{
+        font-size: 32px;
+        margin-left: 4rem;
+        margin-top: 2rem;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
