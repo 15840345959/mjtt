@@ -1730,8 +1730,8 @@ footer{
     font-size: 22px;
 }
 .play-header-image{
-    height: 1rem;
-    width: 2rem;
+    height: 0.8rem;
+    width: 1.8rem;
     margin-left: 0.5rem;
 }
 .play-content{
@@ -1753,9 +1753,11 @@ footer{
 .test{
     width:400px;
     height:20px;
-    position:fixed;
+    /*position:fixed;*/
     /*top:92%;*/
+    position: absolute;
     margin-left: 12%;
+    margin-bottom: 3rem;
 }
 /*控制播放停止按钮*/
 .BarControl{
