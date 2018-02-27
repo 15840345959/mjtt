@@ -939,6 +939,9 @@ footer{
         width: 2rem;
         margin-left: 18%;
     }
+    img.aui-img-round{
+        border-radius: 0;
+    }
     .aui-list-item-inner{
         margin-top: 0.5rem;
     }

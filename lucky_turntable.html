@@ -22,7 +22,7 @@
 //		outsideRadius:192,			//大转盘外圆的半径
             outsideRadius: 152.5,//152.5
 //		textRadius:155,				//大转盘奖品位置距离圆心的距离
-            textRadius: 127,
+            textRadius: 110,
             insideRadius: 68,			//大转盘内圆的半径
             startAngle: 0,				//开始角度
 
@@ -168,7 +168,8 @@
                             }
                         }
                     } else if (text.indexOf("M") == -1 && text.length > 6) {//奖品名称长度超过一定范围
-                        text = text.substring(0, 6) + "||" + text.substring(6);
+//                        text = text.substring(0, 6) + "||" + text.substring(6);
+                        text = text.substring(0, 4) + "||" + text.substring(4);
                         var texts = text.split("||");
                         for (var j = 0; j < texts.length; j++) {
                             ctx.fillText(texts[j], -ctx.measureText(texts[j]).width / 2, j * line_height);

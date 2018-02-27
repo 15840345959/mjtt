@@ -22,7 +22,7 @@ body {
 }
 
 .banner .turnplate canvas.item {
-    width: 100%;
+    width: 101%;
     margin-top: 118.5px;
 }
 
@@ -133,7 +133,9 @@ body {
 /*360px */
 @media (min-width: 360px) {
     .banner .turnplate canvas.item {
-        margin-top: 113.5px;
+        /*margin-top: 113.5px;*/
+        margin-top: 112px;
+        margin-left: -2px;
     }
     .banner .turnplate img.pointer {
         margin: -248px auto;
@@ -158,10 +160,11 @@ body {
 /*375px */
 @media (min-width: 375px) {
     .banner .turnplate canvas.item {
-        margin-top: 118.5px;
+        margin-top: 116.5px;
+        margin-left: -2px;
     }
     .banner .turnplate img.pointer {
-        margin: -255px auto;
+        margin: -256px auto;
     }
     .lucky-activity-rules{
         margin-bottom: 5rem;
@@ -179,12 +182,13 @@ body {
         height: 590px;
     }
     .banner .turnplate canvas.item {
-        margin-top: 130.5px;
+        margin-top: 128.2px;
+        margin-left: -2px;
     }
     .banner .turnplate img.pointer {
-        width: 132px;
-        height: 132px;
-        margin: -279px auto;
+        width: 133px;
+        height: 133px;
+        margin: -282px auto;
         left: 34%;
     }
     /*指针*/
@@ -220,12 +224,14 @@ body {
         height: 594px;
     }
     .banner .turnplate canvas.item {
-        margin-top: 131.5px;
+        /*margin-top: 131.5px;*/
+        margin-top: 129.5px;
+        margin-left: -2px;
     }
     .banner .turnplate img.pointer {
         width: 134px;
         height: 134px;
-        margin: -281px auto;
+        margin: -283px auto;
         left: 34%;
     }
     /*指针图片*/
@@ -253,13 +259,14 @@ body {
         height: 1102px;
     }
     .banner .turnplate canvas.item {
-        margin-top: 242.5px;
+        margin-top: 239px;
+        margin-left: -3px;
     }
     .banner .turnplate img.pointer {
-        width: 247px;
-        height: 247px;
-        margin: -515px auto;
-        left: 34%;
+        width: 248px;
+        height: 248px;
+        margin: -518.5px auto;
+        left: 34.1%;
     }
     .aui-bar-nav{
         line-height: 3.25rem;
@@ -314,12 +321,14 @@ body {
         height: 1468px;
     }
     .banner .turnplate canvas.item {
-        margin-top: 324.5px;
+        margin-top: 320.5px;
+        margin-left: -5px;
     }
     .banner .turnplate img.pointer {
-        width: 330px;
-        height: 330px;
-        margin: -684px auto;
+        width: 332px;
+        height: 332px;
+        margin: -691px auto;
+        left: 33.9%;
     }
     /*指针*/
     .lucky-pointer{
