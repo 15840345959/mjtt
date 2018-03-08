@@ -24,24 +24,6 @@
     <script type="text/javascript" src="./script/aui-tab.js"></script>
 
     <script type="text/javascript">
-
-
-        //转盘奖品信息
-        var restataunts_data = null;
-
-        //根据奖品名称获取奖品item
-        function getPrizeItemByResult(result) {
-
-            for (var i = 0; i < restataunts_data.length; i++) {
-                if (result.indexOf(restataunts_data[i].prize_name) >= 0) {
-                    return i + 1;
-                }
-
-            }
-            return restataunts_data.length;
-        }
-
-
         var restataunts_data = null
 
         var token = null;
@@ -62,26 +44,20 @@
         //调接口
         function loadData() {
 
-            var param = {
-                token: token
-            }
+//            var param = {
+//                token: token
+//            }
 
-            getLuckyWheel(param, function (data) {
+            getLuckyWheel(function (data) {
                 console.log("getLuckyWheel data:" + JSON.stringify(data))
                 if (toast != null) {
                     toast.hide();
                 }
                 restataunts_data = data.data.turntable_data;
-//                整理数据
-                var msgObj = data.data;
-                console.log("msgObj.luckdrawrule[0].content：" + JSON.stringify(msgObj.luckdrawrule[0].content));
-                msgObj.luckdrawrule_arr = msgObj.luckdrawrule[0].content.split('\r\n\r\n');
-                console.log("luckdrawrule_arr after:" + JSON.stringify(msgObj.luckdrawrule_arr));
                 //调dot模板
                 var interText = doT.template($("#message_content_template").text())
-//                alert(interText);
-                console.log("dot msgObj:" + JSON.stringify(msgObj));
-                $("#message_content").html(interText(msgObj))
+//            alert(interText);
+                $("#message_content").html(interText(data))
 
                 //转盘内容
                 var turnplate = {
@@ -141,8 +117,6 @@
                             callback: function () {
 //                        中奖提示语
                                 alert(txt);
-                                //刷新中奖记录
-                                loadData();
                                 turnplate.bRotate = !turnplate.bRotate;
                             }
                         });
@@ -151,18 +125,13 @@
                     $('.pointer').click(function () {
                         if (turnplate.bRotate) return;
 
-                        var param = {
-                            token: token
-                        }
-                        luckDraw(param, function (ret) {
-                            console.log("luckDraw ret:" + JSON.stringify(ret));
-                            turnplate.bRotate = !turnplate.bRotate;
-                            //获取随机数(奖品个数范围内)
-//                            var item = rnd(1, turnplate.restaraunts.length);
-                            var item = getPrizeItemByResult(ret.data.result);
-                            console.log("item:" + item);
-                            //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
-                            rotateFn(item, ret.data.result);
+                        
+
+                        turnplate.bRotate = !turnplate.bRotate;
+                        //获取随机数(奖品个数范围内)
+                        var item = rnd(1, turnplate.restaraunts.length);
+                        //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
+                        rotateFn(item, turnplate.restaraunts[item - 1]);
 
 //                        switch (item) {
 //                            case 1:
@@ -196,10 +165,7 @@
 //                                rotateFn(288, turnplate.restaraunts[9]);
 //                                break;
 //                        }
-
-                        })
-
-
+                        console.log(item);
                     });
                     drawRouletteWheel();
                 });
@@ -317,25 +283,25 @@
     </div>
     <!--中奖记录-->
     <div class="lucky-winning-record">
-        <img src="./image/winning_record_up.png"/>
-        {{for(var i=0;i<it.luck_record.length;i++){}}
-        <div class="lucky-winning-record" id="lucky-winning-record"
-             style="background-image: url('./image/winning_record_center.png');background-size: 100%;background-repeat: no-repeat;max-width: 100%;margin-left: 0%;">
-            <p class="lucky-winning-record-name">{{=it.luck_record[i].prize_name}}</p>
-            <p class="lucky-winning-record-date">{{=it.luck_record[i].prize_date}}</p>
+        <img src="./image/winning_record.png"/>
+
+        <div class="lucky-winning-record" id="lucky-winning-record">
+            <p class="lucky-winning-record-name">奖品1</p>
+            <p class="lucky-winning-record-date">2018-01-02 16:43</p>
         </div>
-        {{}}}
-        <img src="./image/winning_record_down.png"/>
+
     </div>
     <!--活动规则-->
     <div class="lucky-activity-rules">
         <img src="./image/activity_rules.png" style="width: 100%;"/>
         <div class="lucky-activity-rules">
-            {{for(var i=0;i
-            <it.luckdrawrule_arr.length ;i++){}}
-            <p class="{{? i==0}}lucky-activity-rules-p1 {{??}} lucky-activity-rules-p2 {{?}}">
-                {{=it.luckdrawrule_arr[i]}}</p>
-            {{ } }}
+            <p class="lucky-activity-rules-p1">1.每个用户每天有一次免费抽奖的机会</p>
+            <p class="lucky-activity-rules-p2">2.二个听听币抽取一次（除免费抽奖外）</p>
+            <p class="lucky-activity-rules-p2">3.中奖所得听听币可以累积</p>
+            <p class="lucky-activity-rules-p2">4.解锁全球的奖品为78个听听币，用户可以随时使用听听币进行全球解锁</p>
+            <p class="lucky-activity-rules-p2">5.解锁城市的奖品为30个听听币，用户可以随时使用听听币进行任意城市解锁</p>
+            <p class="lucky-activity-rules-p2">6.解锁全球与解锁城市所赠送的听听币可以累积</p>
+            <p class="lucky-activity-rules-p2">7.本抽奖活动最终解释权归美景听听所有</p>
         </div>
     </div>
 </script>

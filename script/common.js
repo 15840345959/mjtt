@@ -7,6 +7,38 @@ function download(){
     }
 }
 
+/*
+ * 空数组不为空，服务于judgeIsAnyNullStr函数
+ *
+ * By TerryQi
+ *
+ * 2017-08-13
+ *
+ */
+function isArray(o) {
+    return Object.prototype.toString.call(o) == '[object Array]';
+}
+
+/*
+ *
+ *  通用判断参数为空的方法
+ *
+ */
+function judgeIsAnyNullStr() {
+    if (arguments.length > 0) {
+        for (var i = 0; i < arguments.length; i++) {
+            console.log("i:" + i + " argument:" + arguments[i]);
+            if (!isArray(arguments[i])) {
+                if (arguments[i] === 0) {        //额外判断等于0
+                } else if (arguments[i] == null || arguments[i] == "" || arguments[i] == undefined || arguments[i] == "未设置") {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
 //深度链接
 function driveLinkedme(param_path,param_id){
     var initData = {};
@@ -308,3 +340,6 @@ function showToast(type,title){
             break;
     }
 }
+
+
+

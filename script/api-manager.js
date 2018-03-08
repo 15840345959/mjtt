@@ -33,8 +33,18 @@ function ajaxRequest(url, method, successCallBack, errorCallBack, loadding) {
  */
 function ajaxRequestImp(url, param, method, callBack) {
     console.log("url:" + url + " method:" + method + " param:" + JSON.stringify(param));
+    var authorization_token = null;
+    if (!judgeIsAnyNullStr(param.token)) {
+        authorization_token = "Token " + param.token;
+        delete  param.token;
+    }
+    console.log("authorization_token:" + token)
     $.ajax({
         type: method,  //提交方式
+        headers: {
+            Accept: "application/json; charset=utf-8",
+            Authorization: authorization_token
+        },
         url: url,//路径
         data: param,//数据，这里使用的是Json格式进行传输
         //contentType: "application/json", //必须有
@@ -57,6 +67,7 @@ function ajaxRequestImp(url, param, method, callBack) {
  *
  * 2018-02-12
  */
+
 //获取主播详细信息
 function getFwhConfig(param, successCallBack, errorCallBack) {
     ajaxRequestImp(SERVER_URL + "rest/wechat/config/", param, "POST", successCallBack);
@@ -110,5 +121,22 @@ function getMorecategory(param, successCallBack, errorCallBack) {
     var category_id = param.category_id
     ajaxRequest("rest/radio/category/" + category_id + "/album/", "GET", successCallBack, errorCallBack)
 }
+
+//获取播放页
+function getScene(param, successCallBack, errorCallBack) {
+    var scene_ID = param.scene_ID
+    ajaxRequest("rest/scene/" + scene_ID, "GET", successCallBack, errorCallBack)
+}
+
+//幸运大转盘获取信息页面
+function getLuckyWheel(param, successCallBack, errorCallBack) {
+    ajaxRequestImp(SERVER_URL + "rest/lucky_wheel", param, "GET", successCallBack)
+}
+
+//转盘抽奖接口
+function luckDraw(param, successCallBack, errorCallBack) {
+    ajaxRequestImp(SERVER_URL + "rest/luck_draw", param, "GET", successCallBack)
+}
+
 
 

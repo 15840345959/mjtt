@@ -10,58 +10,138 @@
     <link rel="stylesheet" type="text/css" href="./css/aui.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <style>
-        body{
-            background-image: url(image/play_background.png);
-            background-size: 100%;
-            background-repeat: no-repeat;
-            overflow-x: hidden;
-        }
+        /*body{*/
+            /*background-image: url(image/play_background.png);*/
+        /*!*url(image/play_background.png)*!*/
+            /*background-size: 100%;*/
+            /*background-repeat: no-repeat;*/
+            /*overflow-x: hidden;*/
+
+        /*}*/
     </style>
 </head>
-<body>
-<header class="aui-bar aui-bar-nav play-header">
-    <a class="aui-pull-left aui-btn">
-       <!--<img class="play-header-image" src="image/play_back.png"/>-->
-    </a>
-    <div class="aui-title play-header-title">荣军院大教堂</div>
-</header>
-<section class="aui-content-padded play-content">
-    <div class="aui-content ">
-        Invalides Cathedral
-    </div>
-</section>
-<div class="play-button">
-    <img src="image/play_startbutton.png"/>
+<body style="overflow-x: hidden;">
+
+<div id="message_content" class="message_content">
+
 </div>
-<div class="test"></div>
+
+<script id="message_content_template" type="text/x-dot-template">
+    <div style="background-image: url({{=it.image}});background-repeat: no-repeat;">
+        <header class="aui-bar aui-bar-nav play-header">
+            <div class="aui-title play-header-title">{{=it.name}}</div>
+        </header>
+        <section class="aui-content-padded play-content">
+            <div class="aui-content ">
+                {{=it.name_en}}
+            </div>
+        </section>
+        <div style="background-image: url(./image/play_background.png);background-repeat: no-repeat;background-size: 100% 100%;overflow-y: hidden;">
+            <div class="play-button">
+                <img src="image/play_startbutton.png"/>
+            </div>
+            <div class="test"></div>
+        </div>
+    </div>
+</script>
 
 
 </body>
-
 <script type="text/javascript" src="./script/jquery.min.js"></script>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/aui-toast.js"></script>
+<script type="text/javascript" src="./script/aui-dialog.js"></script>
 <script type="text/javascript" src="./script/jquery-PlayBar.min.js"></script>
 
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/api-manager.js"></script>
+<script type="text/javascript" src="./script/doT.min.js"></script>
+
+
+
 <script type="text/javascript">
+
+    var scene_ID = null;
+
+
     $(function(){
-        var action=true;
-        $('.play-button').click(function(){
-            if(action){
-                $.playBar.Stop();
-                action=false;
-                $(this).html('<div class="end-button">' +
-                    '<img src="./image/play_endbutton.png"/>' +
-                    '</div>'+'<div class="test"></div>');
-            }else{
-                $.playBar.Begin();
-                action=true;
-                $(this).html('<div class="end-button">' +
-                    '<img src="image/play_startbutton.png"/>' +
-                    '</div>'+'<div class="test"></div>');
-            }
-        });
-        $.playBar.addBar($('.test'),400*60);//第一个参数是需要显示播放器的容器，第二个参数为时间，单位毫秒
-        $.playBar.changeBarColor("#CC0000");//设置进度条颜色
+
+        scene_ID = getQueryString("scene_ID");
+        console.log("scene_ID:"+scene_ID);
+
+        loadData();  //加载页面数据
+
     });
+
+    //调接口
+    function loadData() {
+
+        var param = {
+            scene_ID: scene_ID
+        }
+        getScene(param,function (data) {
+            console.log("getScene data:"+JSON.stringify(data))
+            if(data){
+                var title = data.name + "-美景听听"
+                $("title").html(title);
+
+//                alert(data.images.images)
+
+            //调dot模板
+            var interText = doT.template($("#message_content_template").text())
+//            alert(interText);
+            $("#message_content").html(interText(data))
+
+            //播放按钮
+            var action=true;
+            $('.play-button').click(function(){
+                if(action){
+                    $.playBar.Stop();
+                    action=false;
+                    $(this).html('<div class="end-button">' +
+                        '<img src="./image/play_endbutton.png"/>' +
+                        '</div>'+'<div class="test"></div>');
+                }else{
+                    $.playBar.Begin();
+                    action=true;
+                    $(this).html('<div class="end-button">' +
+                        '<img src="image/play_startbutton.png"/>' +
+                        '</div>'+'<div class="test"></div>');
+                }
+            });
+//            400*60
+                //取音频时长
+
+//                var audiosSize = data.audios.audio.duration;
+
+            $.playBar.addBar($('.test'),400*60);//第一个参数是需要显示播放器的容器，第二个参数为时间，单位毫秒
+            $.playBar.changeBarColor("#CC0000");//设置进度条颜色
+            }
+
+            if(toast !=null){
+                toast.hide();
+            }
+
+        })
+    }
+
 </script>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

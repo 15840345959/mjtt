@@ -55,24 +55,24 @@ body {
     margin-left: 5%;
 }
 .lucky-winning-record-name{
-    margin-top: -2rem;
+    /*margin-top: -1rem;*/
     font-family: STYuanti-SC-Bold;
     font-size: 14px;
     color: #FFFFFF;
-    margin-left: 14px;
+    margin-left: 24px;
 }
 .lucky-winning-record-date{
     font-family: STYuanti-SC-Bold;
     font-size: 14px;
     color: #FFFFFF;
-    margin-left: 159px;
+    margin-left: 188px;
     margin-top: -22px;
 }
 .lucky-activity-rules {
     max-width: 95%;
     margin-left: 1%;
     margin-bottom: 3rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
 }
 .lucky-activity-rules-p1{
     font-family: STYuanti-SC-Bold;
@@ -172,7 +172,7 @@ body {
     /*指针*/
     .lucky-pointer{
         margin-top: 7.8rem;
-        margin-left: 8.5rem;
+        margin-left: 8.7rem;
     }
 
 }
@@ -202,11 +202,15 @@ body {
     .lucky-winning-record-date{
         font-size: 16px;
         margin-top: -24px;
-        margin-left: 170px;
+        margin-left: 203px;
     }
+    /*.lucky-winning-record{*/
+        /*margin-bottom: -1px;*/
+        /*margin-top: -0.9px;*/
+    /*}*/
     /*活动规则*/
     .lucky-activity-rules{
-        margin-top: 0.8rem;
+        margin-top: 0rem;
     }
     .lucky-activity-rules-p1{
         font-size: 16px;
@@ -289,13 +293,17 @@ body {
     /*中奖记录*/
     .lucky-winning-record-name{
         font-size: 26px;
-        margin-top: -3rem;
+        margin-left: 41px;
+        /*margin-top: -3rem;*/
     }
     .lucky-winning-record-date{
-        margin-left: 349px;
+        margin-left: 417px;
         margin-top: -39px;
         font-size: 26px;
     }
+    /*.lucky-winning-record{*/
+        /*margin-top: -0.5px;*/
+    /*}*/
     /*活动规则*/
     .lucky-activity-rules{
         margin-top: 1.5rem;
@@ -339,16 +347,17 @@ body {
     /*中奖记录*/
     .lucky-winning-record-name{
         font-size: 29px;
-        margin-top: -4rem;
+        margin-left: 68px;
+        /*margin-top: -4rem;*/
     }
     .lucky-winning-record-date{
-        margin-left: 536px;
+        margin-left: 593px;
         margin-top: -42px;
         font-size: 29px;
     }
     /*活动规则*/
     .lucky-activity-rules{
-        margin-top: 2.2rem;
+        margin-top: 0rem;
         margin-left: 3%;
         margin-bottom: 10rem;
     }
