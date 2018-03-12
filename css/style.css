@@ -1701,6 +1701,14 @@ footer{
 
 
 }
+
+@media (min-width:1200px){
+
+
+
+
+}
+
 .aui-grid [class*=aui-col-]{
     padding:0.5rem 0;
 }
@@ -1739,7 +1747,8 @@ footer{
 }
 .play-content{
     color: #ffffff;
-    margin: -0.25rem;
+    /*margin: -0.25rem;*/
+    margin-top: -0.25rem;
     text-align: center;
 }
 .play-button{
@@ -1754,7 +1763,8 @@ footer{
     /*margin-left: 40%;*/
 }
 .test{
-    width:400px;
+    /*width:400px;*/
+	width:85%;
     height:20px;
     /*position:fixed;*/
     /*top:92%;*/
@@ -1780,7 +1790,8 @@ footer{
 }
 .TheBar{
     position:relative;
-    width:calc(100% - 114px);
+    /* width:calc(100% - 114px); */
+	width:85%;
     margin-left:2px;
     height:4px;
     border-radius:2px;
@@ -1830,8 +1841,10 @@ footer{
     color:#000000;
     font-size:12px;
     line-height:20px;
-    margin-left: 64%;
-    margin-top: -6%;
+    /* margin-left: 64%; */
+    /* margin-top: -6%; */
+	margin-left: 75%;
+	margin-top: -8%;
     font-family: PingFangSC-Medium;
 }
 

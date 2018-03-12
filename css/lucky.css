@@ -3,6 +3,58 @@ body {
     background-color: #FED887;
 }
 
+/*遮罩部分*/
+.mask {
+    /*display: none;*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -99;
+}
+
+.popup{
+    display: none;
+    margin-top: -277%;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    position: absolute;
+    z-index: 9999999999;
+}
+
+.close{
+    position: absolute;
+    width: 12%;
+    margin-left: 85%;
+}
+
+.winning_description{
+    margin-top: -38%;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: PingFang-SC-Semibold;
+    font-size: 14px;
+}
+
+.close{
+    border-radius: 5px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 7%;
+    position: relative;
+    background: #ffffff;
+    width: 62%;
+    margin-left: 20%;
+    height: 2rem
+}
+
+.close p{
+    padding-top: 5%;
+    font-family: PingFang-SC-Semibold;
+}
+
 /*375   iphone6   iphone7    iphone8    iphoneX*/
 .banner {
     display: block;
@@ -375,6 +427,7 @@ body {
 
 
 }
+
 
 
 

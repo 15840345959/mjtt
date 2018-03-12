@@ -22,6 +22,7 @@
     <script type="text/javascript" src="./script/doT.min.js"></script>
     <script type="text/javascript" src="./script/api-controller.js"></script>
     <script type="text/javascript" src="./script/aui-tab.js"></script>
+
     <script type="text/javascript">
 
 
@@ -34,8 +35,6 @@
             for (var i = 0; i < restataunts_data.length; i++) {
                 if (result.indexOf(restataunts_data[i].prize_name) >= 0) {
                     return i + 1;
-                }else {
-
                 }
 
             }
@@ -50,7 +49,7 @@
         $(function () {
 
             token = getQueryString("token");
-//            console.log("token token:" + JSON.stringify(token))
+            console.log("token token:" + JSON.stringify(token))
 
             if (token == null && token == '') {
 
@@ -68,16 +67,16 @@
             }
 
             getLuckyWheel(param, function (data) {
-//                console.log("getLuckyWheel data:" + JSON.stringify(data))
+                console.log("getLuckyWheel data:" + JSON.stringify(data))
                 if (toast != null) {
                     toast.hide();
                 }
                 restataunts_data = data.data.turntable_data;
 //                整理数据
                 var msgObj = data.data;
-//                console.log("msgObj.luckdrawrule[0].content：" + JSON.stringify(msgObj.luckdrawrule[0].content));
+                console.log("msgObj.luckdrawrule[0].content：" + JSON.stringify(msgObj.luckdrawrule[0].content));
                 msgObj.luckdrawrule_arr = msgObj.luckdrawrule[0].content.split('\r\n\r\n');
-//                console.log("luckdrawrule_arr after:" + JSON.stringify(msgObj.luckdrawrule_arr));
+                console.log("luckdrawrule_arr after:" + JSON.stringify(msgObj.luckdrawrule_arr));
                 //调dot模板
                 var interText = doT.template($("#message_content_template").text())
 //                alert(interText);
@@ -100,10 +99,10 @@
 
                 $(document).ready(function () {
                     //动态添加大转盘的奖品与奖品区域背景颜色
-//                    console.log('restataunts_data is : ' + JSON.stringify(restataunts_data))
+                    console.log('restataunts_data is : ' + JSON.stringify(restataunts_data))
                     for (var i = 0; i < restataunts_data.length; i++) {
                         turnplate.restaraunts[i] = restataunts_data[i].prize_name
-//                        console.log('turnplate.restaraunts[' + i + '] is : ' + JSON.stringify(turnplate.restaraunts[i]))
+                        console.log('turnplate.restaraunts[' + i + '] is : ' + JSON.stringify(turnplate.restaraunts[i]))
                         if (i % 2 == 0) {
                             turnplate.colors[i] = "#FFA41A"
                         }
@@ -127,27 +126,6 @@
                     };
 
                     //旋转转盘 item:奖品位置; txt：提示语;
-//                    var rotateFn = function (item, txt) {
-//                        var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length * 2));
-//                        if (angles < 270) {
-//                            angles = 270 - angles;
-//                        } else {
-//                            angles = 360 - angles + 270;
-//                        }
-//                        $('#wheelcanvas').stopRotate();
-//                        $('#wheelcanvas').rotate({
-//                            angle: 0,
-//                            animateTo: angles + 1800,
-//                            duration: 8000,
-//                            callback: function () {
-////                        中奖提示语
-//                                alert(txt);
-//                                //刷新中奖记录
-//                                loadData();
-//                                turnplate.bRotate = !turnplate.bRotate;
-//                            }
-//                        });
-//                    };
                     var rotateFn = function (item, txt) {
                         var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length * 2));
                         if (angles < 270) {
@@ -162,26 +140,9 @@
                             duration: 8000,
                             callback: function () {
 //                        中奖提示语
-
-//                                luckDraw(param,function (ret) {
-                                    //调dot模板
-                                    var interText = doT.template($("#message_popup_template").text())
-//                alert(interText);
-                                    console.log("dot txt:" + JSON.stringify(txt));
-
-                                    var message = msgObj.concat(txt);
-
-                                console.log("dot message:" + JSON.stringify(message));
-
-                                    $("#message_popup").html(interText(message))
-
-                                $('#popup').show();
-//                                })
-//                                alert(txt);
-
-
+                                alert(txt);
                                 //刷新中奖记录
-//                                loadData();
+                                loadData();
                                 turnplate.bRotate = !turnplate.bRotate;
                             }
                         });
@@ -194,14 +155,12 @@
                             token: token
                         }
                         luckDraw(param, function (ret) {
-//                            console.log("luckDraw ret:" + JSON.stringify(ret));
+                            console.log("luckDraw ret:" + JSON.stringify(ret));
                             turnplate.bRotate = !turnplate.bRotate;
                             //获取随机数(奖品个数范围内)
 //                            var item = rnd(1, turnplate.restaraunts.length);
-//                            console.log("result:" + ret.data.result);
-
                             var item = getPrizeItemByResult(ret.data.result);
-//                            console.log("item:" + item);
+                            console.log("item:" + item);
                             //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
                             rotateFn(item, ret.data.result);
 
@@ -325,16 +284,14 @@
 
             });
         }
-        function closeButton() {
-            $('#popup').hide();
-            loadData();
-        }
+
         //
 
     </script>
 
 </head>
 <body>
+
 <div id="message_content" class="message_content">
 
 </div>
@@ -352,9 +309,8 @@
             <div class="turnplate">
                 <img class="lucky-pointer" src="./image/lucky_pointer.png"
                      style="z-index:999999999999999999999999999999;">
-                <!--style="z-index:999999999999999999999999999999;"-->
                 <canvas class="item" id="wheelcanvas" width="422px" height="422px"
-                        ></canvas>
+                        style="z-index:999999999999999999999999999999;"></canvas>
                 <img class="pointer" src="./image/luck_draw_button.png"/>
             </div>
         </div>
@@ -390,29 +346,6 @@
                 {{=it.luckdrawrule_arr[i]}}</p>
             {{ } }}
         </div>
-    </div>
-</script>
-
-<div id="message_popup" class="message_popup">
-
-</div>
-
-<script  id="message_popup_template" type="text/x-dot-template">
-    <div id="popup" class="popup">
-        <img onclick="closeButton();" class="close" src="./image/close.png"/>
-        <img src="./image/popup.png"/>
-        <!--style="margin-top: -38%;text-align: center;color: #FFFFFF;font-family: PingFang-SC-Semibold;font-size: 14px;"-->
-        <p class="winning_description">{{=it}}</p>
-
-
-        <!-- style="border-radius: 5px;color: #FFFFFF; text-align: center;margin-top: 7%;position: relative;background: #ffffff;width: 62%;margin-left: 20%;height: 2rem"-->
-        <div onclick="closeButton();" class="close">
-            <!-- style="padding-top: 5%;font-family: PingFang-SC-Semibold;"-->
-            <p>收下了</p>
-        </div>
-
-
-        <div class="mask"></div>
     </div>
 </script>
 

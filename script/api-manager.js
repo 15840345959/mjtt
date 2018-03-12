@@ -128,6 +128,12 @@ function getScene(param, successCallBack, errorCallBack) {
     ajaxRequest("rest/scene/" + scene_ID, "GET", successCallBack, errorCallBack)
 }
 
+//获取子播放信息
+function getSubScene(param, successCallBack, errorCallBack) {
+    var subscene_ID = param.subscene_ID
+    ajaxRequest("rest/subscene/" + subscene_ID, "GET", successCallBack, errorCallBack)
+}
+
 //幸运大转盘获取信息页面
 function getLuckyWheel(param, successCallBack, errorCallBack) {
     ajaxRequestImp(SERVER_URL + "rest/lucky_wheel", param, "GET", successCallBack)

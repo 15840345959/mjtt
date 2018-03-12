@@ -2,25 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>视频</title>
-    <link rel="stylesheet" type="text/css" href="./css/aui.css"/>
-    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
-    <style>
-        /*body{*/
-        /*background-image: url(image/play_background.png);*/
-        /*!*url(image/play_background.png)*!*/
-        /*background-size: 100%;*/
-        /*background-repeat: no-repeat;*/
-        /*overflow-x: hidden;*/
+    <link rel="stylesheet" type="text/css" href="./css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
 
-        /*}*/
-    </style>
 </head>
 <body style="overflow-x: hidden;">
 
@@ -43,14 +32,16 @@
                 <img src="image/play_endbutton.png"/>
             </div>
             <div class="test">
-
+                <p style="">{{=it.audios.audio}}</p>
             </div>
         </div>
     </div>
+
     <audio id="player" controls="controls" class="aui-hide">
         <!--src="https://music.gowithtommy.com/mjtt_backend_server%2Fprod%2Fdata%2Fd4a5500a80757c19dabc3b4752bdb6e0611c21a8.mp3"-->
         <source src="{{=it.audios[0].audio}}"/>
     </audio>
+
 
 </script>
 
@@ -68,81 +59,81 @@
 <script type="text/javascript" src="./script/doT.min.js"></script>
 
 
+
 <script type="text/javascript">
 
-    var scene_ID = null;
+    var subscene_ID = null;
 
-    $(function () {
 
-        scene_ID = getQueryString("scene_ID");
-        console.log("scene_ID:" + scene_ID);
+    $(function(){
+
+        subscene_ID = getQueryString("subscene_ID");
+        console.log("subscene_ID:"+subscene_ID);
 
         loadData();  //加载页面数据
+
     });
 
     //调接口
     function loadData() {
 
         var param = {
-            scene_ID: scene_ID
+            subscene_ID: subscene_ID
         }
-        getScene(param, function (data) {
-            console.log("getScene data:" + JSON.stringify(data))
-            if (data) {
+        getSubScene(param,function (data) {
+            console.log("getScene data:"+JSON.stringify(data))
+            if(data){
                 var title = data.name + "-美景听听"
                 $("title").html(title);
 
                 var audio = data.audios[0];
-                console.log('audios[0].audio:' + JSON.stringify(audio.audio));
+                console.log('audios[0].audio:'+ JSON.stringify(audio.audio));
 
 
 //                console.log('audios:'+ JSON.stringify(audio));
 
-                //调dot模板
-                var interText = doT.template($("#message_content_template").text())
+            //调dot模板
+            var interText = doT.template($("#message_content_template").text())
 //            alert(interText);
-                $("#message_content").html(interText(data))
+            $("#message_content").html(interText(data))
+
                 //播放音频
                 var player = $("#player")[0];
                 player.play();/*播放*/
-                //播放按钮
-                var action = true;
-                $('.play-button').click(function () {
-                    if (action) {
-                        $.playBar.Stop();
-                        action = false;
-                        $(this).html('<div class="end-button">' +
-                            '<img src="./image/play_startbutton.png"/>' +
-                            '</div>');
-                        player.pause();
+
+            //播放按钮
+            var action=true;
+            $('.play-button').click(function(){
+                if(action){
+                    $.playBar.Stop();
+                    action=false;
+                    $(this).html('<div class="end-button">' +
+                        '<img src="./image/play_startbutton.png"/>' +
+                        '</div>');
 //                    +'<div class="test"></div>'
-                    } else {
-                        $.playBar.Begin();
-                        action = true;
-                        $(this).html('<div class="end-button">' +
-                            '<img src="image/play_endbutton.png"/>' +
-                            '</div>');
-                        player.play();
-                    }
-                });
+                    player.pause();
+                }else{
+                    $.playBar.Begin();
+                    action=true;
+                    $(this).html('<div class="end-button">' +
+                        '<img src="image/play_endbutton.png"/>' +
+                        '</div>');
+                    player.play();
+                }
+            });
 
                 //取音频时长
                 getTime()
 
-//                var beginTime = $('.BarFinishTime');
-//                console.info("开始时间为："+JSON.stringify(beginTime)+"秒")
-
-//                $.playBar.addBar($('.test'), 400 * 60);//第一个参数是需要显示播放器的容器，第二个参数为时间，单位毫秒
-                $.playBar.changeBarColor("#CC0000");//设置进度条颜色
+//            $.playBar.addBar($('.test'),400*60);//第一个参数是需要显示播放器的容器，第二个参数为时间，单位毫秒
+            $.playBar.changeBarColor("#CC0000");//设置进度条颜色
             }
 
-            if (toast != null) {
+            if(toast !=null){
                 toast.hide();
             }
 
         })
-
-
     }
 
     //获取音频时间
@@ -155,20 +146,9 @@
             else{
                 $.playBar.addBar($('.test'), duration * 1000);//第一个参数是需要显示播放器的容器，第二个参数为时间，单位毫秒
                 console.info("该歌曲的总时间为："+duration+"秒")
-
             }
         }, 10);
     }
-
-
-//    var audio=document.getElementById('player');
-//    if(audio){
-//        audio.loop = false;
-//        audio.addEventListener('ended', function () {
-//            window.location.reload()
-////            $('#playvoice').attr("src",'images/play_voice_off.png');
-//        }, false);
-//    }
 
 
 </script>
