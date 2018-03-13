@@ -38,7 +38,7 @@ function ajaxRequestImp(url, param, method, callBack) {
         authorization_token = "Token " + param.token;
         delete  param.token;
     }
-    console.log("authorization_token:" + token)
+    console.log("authorization_token:" + param.token)
     $.ajax({
         type: method,  //提交方式
         headers: {
