@@ -17,14 +17,14 @@ body {
 
 .popup{
     display: none;
-    margin-top: -277%;
+    margin-top: -350%;
     margin-right: 2rem;
     margin-left: 2rem;
     position: absolute;
     z-index: 9999999999;
 }
 
-.close{
+.closeButton{
     position: absolute;
     width: 12%;
     margin-left: 85%;

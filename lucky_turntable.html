@@ -34,7 +34,7 @@
             for (var i = 0; i < restataunts_data.length; i++) {
                 if (result.indexOf(restataunts_data[i].prize_name) >= 0) {
                     return i + 1;
-                }else {
+                } else {
 
                 }
 
@@ -162,22 +162,16 @@
                             duration: 8000,
                             callback: function () {
 //                        中奖提示语
+                            alert(txt);
+//                            $("#popup_txt").text(txt);
 
-//                                luckDraw(param,function (ret) {
-                                    //调dot模板
-                                    var interText = doT.template($("#message_popup_template").text())
-//                alert(interText);
-                                    console.log("dot txt:" + JSON.stringify(txt));
+//                            $("#message_popup").removeClass('aui-hide');
+                                //判断是否存在奖品链接
 
-                                    var message = msgObj.concat(txt);
 
-                                console.log("dot message:" + JSON.stringify(message));
 
-                                    $("#message_popup").html(interText(message))
+//                                $("#popup").show();
 
-                                $('#popup').show();
-//                                })
-//                                alert(txt);
 
 
                                 //刷新中奖记录
@@ -325,10 +319,12 @@
 
             });
         }
+
         function closeButton() {
             $('#popup').hide();
             loadData();
         }
+
         //
 
     </script>
@@ -354,7 +350,7 @@
                      style="z-index:999999999999999999999999999999;">
                 <!--style="z-index:999999999999999999999999999999;"-->
                 <canvas class="item" id="wheelcanvas" width="422px" height="422px"
-                        ></canvas>
+                ></canvas>
                 <img class="pointer" src="./image/luck_draw_button.png"/>
             </div>
         </div>
@@ -365,7 +361,9 @@
 
         {{?it.luck_record.length != 0}}
 
-        {{for(var i=0;i<it.luck_record.length;i++){}}
+        {{for(var i=0;i
+        <it.luck_record.length
+                ;i++){}}
         <div class="lucky-winning-record" id="lucky-winning-record"
              style="background-image: url('./image/winning_record_center.png');background-size: 100%;background-repeat: no-repeat;max-width: 100%;margin-left: 0%;">
             <p class="lucky-winning-record-name">{{=it.luck_record[i].prize_name}}</p>
@@ -393,28 +391,20 @@
     </div>
 </script>
 
-<div id="message_popup" class="message_popup">
-
-</div>
-
-<script  id="message_popup_template" type="text/x-dot-template">
+<!--<div id="message_popup" class="message_popup aui-hide">-->
     <div id="popup" class="popup">
-        <img onclick="closeButton();" class="close" src="./image/close.png"/>
+        <img onclick="closeButton();" class="closeButton" src="./image/close.png"/>
         <img src="./image/popup.png"/>
         <!--style="margin-top: -38%;text-align: center;color: #FFFFFF;font-family: PingFang-SC-Semibold;font-size: 14px;"-->
-        <p class="winning_description">{{=it}}</p>
-
-
+        <p id="popup_txt" class="winning_description"></p>
         <!-- style="border-radius: 5px;color: #FFFFFF; text-align: center;margin-top: 7%;position: relative;background: #ffffff;width: 62%;margin-left: 20%;height: 2rem"-->
         <div onclick="closeButton();" class="close">
             <!-- style="padding-top: 5%;font-family: PingFang-SC-Semibold;"-->
-            <p>收下了</p>
+            <p id="popup_button">收下了</p>
         </div>
-
-
         <div class="mask"></div>
     </div>
-</script>
+<!--</div>-->
 
 
 </body>
