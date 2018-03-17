@@ -148,7 +148,7 @@
 //                            }
 //                        });
 //                    };
-                    var rotateFn = function (item, txt) {
+                    var rotateFn = function (item, txt,url) {
                         var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length * 2));
                         if (angles < 270) {
                             angles = 270 - angles;
@@ -162,16 +162,22 @@
                             duration: 8000,
                             callback: function () {
 //                        中奖提示语
-                            alert(txt);
-//                            $("#popup_txt").text(txt);
+//                            alert(txt);
+                            $("#popup_txt").text(txt);
 
 //                            $("#message_popup").removeClass('aui-hide');
                                 //判断是否存在奖品链接
-
-
+                                console.log('url is : ' + JSON.stringify(url))
+                                if(url){
+                                    $("#popup_close").hide();
+                                    $("#popup_a").show();
+                                    $("#popup").show();
+                                    $("#popup_a").attr('href',url);
+                                }else{
+                                    $("#popup").show();
+                                }
 
 //                                $("#popup").show();
-
 
 
                                 //刷新中奖记录
@@ -195,9 +201,14 @@
 //                            console.log("result:" + ret.data.result);
 
                             var item = getPrizeItemByResult(ret.data.result);
+
+                            //返回的url
+                            var url = ret.data.link_url;
+
+
 //                            console.log("item:" + item);
                             //奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
-                            rotateFn(item, ret.data.result);
+                            rotateFn(item, ret.data.result,url);
 
 //                        switch (item) {
 //                            case 1:
@@ -398,10 +409,20 @@
         <!--style="margin-top: -38%;text-align: center;color: #FFFFFF;font-family: PingFang-SC-Semibold;font-size: 14px;"-->
         <p id="popup_txt" class="winning_description"></p>
         <!-- style="border-radius: 5px;color: #FFFFFF; text-align: center;margin-top: 7%;position: relative;background: #ffffff;width: 62%;margin-left: 20%;height: 2rem"-->
-        <div onclick="closeButton();" class="close">
+        <div onclick="closeButton();" class="close" id="popup_close">
             <!-- style="padding-top: 5%;font-family: PingFang-SC-Semibold;"-->
             <p id="popup_button">收下了</p>
         </div>
+
+
+        <a id="popup_a" style="display: none" href="">
+            <div class="close">
+            <!-- style="padding-top: 5%;font-family: PingFang-SC-Semibold;"-->
+                <p id="popup_btn">点击领取</p>
+            </div>
+        </a>
+
+
         <div class="mask"></div>
     </div>
 <!--</div>-->

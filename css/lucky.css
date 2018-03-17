@@ -17,7 +17,9 @@ body {
 
 .popup{
     display: none;
-    margin-top: -350%;
+    /*margin-top: -244%;*/
+    /*margin-top: -1416px;*/
+    top: 185px;
     margin-right: 2rem;
     margin-left: 2rem;
     position: absolute;
