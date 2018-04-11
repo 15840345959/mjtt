@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分享</title>
+    <link rel="stylesheet" type="text/css" href="./css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav">
+    <!--<a class="aui-pull-left aui-btn">-->
+    <!--<span class="style-back-icon">-->
+    <!--<img src="image/back.png" />-->
+    <!--</span>-->
+    <!--</a>-->
+    <div class="aui-title">邀请好友，双方有礼</div>
+</header>
+<div>
+    <input id="upfile" type="file" multiple="multiple">
+</div>
+<div>
+    <span onclick="clickUpload();">上传</span>
+</div>
+<section class="aui-content-padded">
+    <div class="style-content-image" id="image">
+        <img src="./image/set.png"/>
+    </div>
+    <span class="style-frame" id="data"></span>
+    <button class="aui-btn aui-btn-danger aui-btn-block" id="button" data-clipboard-action="copy"
+            data-clipboard-target="#data">复制邀请码
+    </button>
+</section>
+<div style="height:4.16rem;"></div>
+<footer id="footer">
+    <div class="aui-tips aui-row" onclick="download()">
+        <div class="aui-col-xs-2">
+            <img src="./image/app.png"/>
+        </div>
+        <div class="aui-col-xs-5 footer-center">
+            <div class="aui-font-size-14 footer-text-margin-l-5">美景听听—<span
+                    class="aui-font-size-12 aui-margin-l-5">达人说</span></div>
+            <div class="aui-font-size-12 footer-text-margin-l-5">让旅行更有内涵</div>
+        </div>
+        <div class="aui-col-xs-5 style-text-open footer-right">
+            <img src="./image/open.png"/>
+        </div>
+    </div>
+</footer>
+</body>
+<script type="text/javascript" src="./script/jquery.min.js"></script>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/aui-toast.js"></script>
+<script type="text/javascript" src="./script/aui-dialog.js"></script>
+<script type="text/javascript" src="./script/aui-tab.js"></script>
+<script type="text/javascript" src="./script/common.js"></script>
+<script type="text/javascript" src="./script/api-manager.js"></script>
+<script type="text/javascript" src="./script/doT.min.js"></script>
+<script type="text/javascript" src="./script/api-controller.js"></script>
+<script type="text/javascript" src="./script/clipboard.min.js"></script>
+<!--2018-02-12-->
+<!--TerryQi-->
+<!--增加服务号分享功能-->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+    function clickUpload() {
+        var files = document.getElementById("upfile").files;
+//        alert(files[0]);
+        var url = "http://testlushu.gowithtommy.com/api/pay/prepay/";
+        // FormData 对象
+        var form = new FormData();// 可以增加表单数据
+        form.append("version", "custom");
+        form.append("cities[]", 367);
+        form.append("cities[]", 370);
+        form.append("slogans[]", "test1");
+        form.append("slogans[]", "test2");
+        form.append("version", "custom");
+        form.append("logos", files[0]);// 文件对象
+        form.append("logos", files[0]);// 文件对象
+        $.ajax({
+            url: url,
+            type: "post",
+            data: form,
+            //关闭序列化
+            dataType: "json",
+            cache: false,//上传文件无需缓存
+            processData: false,//用于对data参数进行序列化处理 这里必须false
+            contentType: false, //必须
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Token 51e2a006e6da8b5f962eec659e7c42ae6c3c5376");
+            },
+            success: function (res) {
+                //判断返回值，若为Object类型，即操作成功
+                console.log("res:" + JSON.stringify(res));
+            }
+        });
+    }
+
+</script>
+</html>

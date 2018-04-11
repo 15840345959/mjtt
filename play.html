@@ -104,7 +104,8 @@
                 $("#message_content").html(interText(data))
                 //播放音频
                 var player = $("#player")[0];
-                player.play();/*播放*/
+                player.play();
+                /*播放*/
                 //播放按钮
                 var action = true;
                 $('.play-button').click(function () {
@@ -112,16 +113,16 @@
                         $.playBar.Stop();
                         action = false;
                         $(this).html('<div class="end-button">' +
-                            '<img src="./image/play_startbutton.png"/>' +
-                            '</div>');
+                                '<img src="./image/play_startbutton.png"/>' +
+                                '</div>');
                         player.pause();
 //                    +'<div class="test"></div>'
                     } else {
                         $.playBar.Begin();
                         action = true;
                         $(this).html('<div class="end-button">' +
-                            '<img src="image/play_endbutton.png"/>' +
-                            '</div>');
+                                '<img src="image/play_endbutton.png"/>' +
+                                '</div>');
                         player.play();
                     }
                 });
@@ -149,26 +150,26 @@
     function getTime() {
         setTimeout(function () {
             var duration = $("#player")[0].duration;
-            if(isNaN(duration)){
+            if (isNaN(duration)) {
                 getTime();
             }
-            else{
+            else {
                 $.playBar.addBar($('.test'), duration * 1000);//第一个参数是需要显示播放器的容器，第二个参数为时间，单位毫秒
-                console.info("该歌曲的总时间为："+duration+"秒")
+                console.info("该歌曲的总时间为：" + duration + "秒")
 
             }
         }, 10);
     }
 
 
-//    var audio=document.getElementById('player');
-//    if(audio){
-//        audio.loop = false;
-//        audio.addEventListener('ended', function () {
-//            window.location.reload()
-////            $('#playvoice').attr("src",'images/play_voice_off.png');
-//        }, false);
-//    }
+    //    var audio=document.getElementById('player');
+    //    if(audio){
+    //        audio.loop = false;
+    //        audio.addEventListener('ended', function () {
+    //            window.location.reload()
+    ////            $('#playvoice').attr("src",'images/play_voice_off.png');
+    //        }, false);
+    //    }
 
 
 </script>
