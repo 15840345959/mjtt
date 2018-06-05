@@ -11,7 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./css/aui.css"/>
     <link rel="stylesheet" type="text/css" href="./css/lucky.css"/>
 
-    <script type="text/javascript" src="./script/jquery.min.js"></script>
+
+    <!--<script type="text/javascript" src="./script/jquery.min.js"></script>-->
+
+
+    <script type="text/javascript" src="./script/jquery-1.10.2.js"></script>
+
     <script type="text/javascript" src="./script/api.js"></script>
     <script type="text/javascript" src="./script/aui-toast.js"></script>
     <script type="text/javascript" src="./script/aui-dialog.js"></script>
@@ -23,7 +28,7 @@
     <script type="text/javascript" src="./script/api-controller.js"></script>
     <script type="text/javascript" src="./script/aui-tab.js"></script>
     <script type="text/javascript">
-
+//        alert('ooooo');
 
         //转盘奖品信息
         var restataunts_data = null;
@@ -44,6 +49,7 @@
 
 
         var restataunts_data = null
+
 
         var token = null;
         //调幸运大转盘接口
@@ -99,6 +105,7 @@
                 };
 
                 $(document).ready(function () {
+//                    alert('222');
                     //动态添加大转盘的奖品与奖品区域背景颜色
 //                    console.log('restataunts_data is : ' + JSON.stringify(restataunts_data))
                     for (var i = 0; i < restataunts_data.length; i++) {
@@ -188,7 +195,10 @@
                     };
 
                     $('.pointer').click(function () {
+//                        alert('2222');
                         if (turnplate.bRotate) return;
+
+//                        alert(turnplate.bRotate);
 
                         var param = {
                             token: token
@@ -245,9 +255,11 @@
 
                         })
 
-
+                        drawRouletteWheel();
+//                        alert('dian')
                     });
                     drawRouletteWheel();
+
                 });
 
                 function rnd(n, m) {
@@ -264,7 +276,9 @@
 
                 function drawRouletteWheel() {
                     var canvas = document.getElementById("wheelcanvas");
+//                    alert(canvas);
                     if (canvas.getContext) {
+//                        alert('canvas');
                         //根据奖品个数计算圆周角度
                         var arc = Math.PI / (turnplate.restaraunts.length / 2);
                         var ctx = canvas.getContext("2d");
@@ -293,8 +307,18 @@
                             //translate方法重新映射画布上的 (0,0) 位置
                             ctx.translate(211 + Math.cos(angle + arc / 2) * turnplate.textRadius, 211 + Math.sin(angle + arc / 2) * turnplate.textRadius);
 
+
                             //rotate方法旋转当前的绘图
                             ctx.rotate(angle + arc / 2 + Math.PI / 2);
+
+                            //问题所在iOS不支持旋转
+                            //新加
+//                            if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { //ios
+//
+//                                ctx.rotate3Y(angle + arc / 2 + Math.PI / 2);
+//
+//                            }
+                            //新加
 
                             /** 下面代码根据奖品类型、奖品名称长度渲染不同效果，如字体、颜色、图片效果。(具体根据实际情况改变) **/
                             if (text.indexOf("M") > 0) {//流量包
@@ -337,6 +361,7 @@
         }
 
         //
+//        alert("999");
 
     </script>
 
@@ -354,6 +379,7 @@
     <!--<div class="aui-title lucky-header-title">幸运大转盘</div>-->
     <!--</header>-->
     <!--转盘-->
+    <!--alert('ooooo');-->
     <div class="lucky-turntable">
         <div class="banner">
             <div class="turnplate">
@@ -372,9 +398,7 @@
 
         {{?it.luck_record.length != 0}}
 
-        {{for(var i=0;i
-        <it.luck_record.length
-                ;i++){}}
+        {{for(var i=0;i<it.luck_record.length;i++){}}
         <div class="lucky-winning-record" id="lucky-winning-record"
              style="background-image: url('./image/winning_record_center.png');background-size: 100%;background-repeat: no-repeat;max-width: 100%;margin-left: 0%;">
             <p class="lucky-winning-record-name">{{=it.luck_record[i].prize_name}}</p>

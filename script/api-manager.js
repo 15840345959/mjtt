@@ -136,13 +136,14 @@ function getSubScene(param, successCallBack, errorCallBack) {
 
 //幸运大转盘获取信息页面
 function getLuckyWheel(param, successCallBack, errorCallBack) {
-    ajaxRequestImp(SERVER_URL + "rest/lucky_wheel", param, "GET", successCallBack)
+    ajaxRequestImp(SERVER_URL + "/rest/lucky_wheel/",param, "GET", successCallBack)
 }
 
 //转盘抽奖接口
 function luckDraw(param, successCallBack, errorCallBack) {
-    ajaxRequestImp(SERVER_URL + "rest/luck_draw", param, "GET", successCallBack)
+    ajaxRequestImp(SERVER_URL + "/rest/luck_draw/",param, "GET", successCallBack)
 }
+
 
 
 
