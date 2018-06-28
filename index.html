@@ -13,42 +13,261 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
     <style>
 
+    p{
+        color: #FFF5F3;
+    }
+    .fx_page{
+        background-image: linear-gradient(-180deg, #FC8E45 10%, #F85F4D 100%);
+    }
+    .fx_top{
+        width:100%;
+        background-image: url("image/renshe.png");
+        background-size: 100%;
+        height: 64px;
+        font-family: PingFangSC-Semibold;
+        font-size: 22px;
+        color: #FFFFFF;
+        letter-spacing: 0.35px;
+        text-align: center;
+        line-height: 64px;
+    }
+    .fx_yaoqingma{
+        position: relative;
+        margin: 0 auto;
+        width:80%;
+        height:20px;
+        z-index: 3;
+        line-height: 20px;
+        font-size: 20px;
+        color: #F85F4D;
+        text-align: center;
+        letter-spacing: 1.11px;
+    }
+    .fx_fuzhi{
+        position: relative;
+        height:40px;
+        margin: 0 auto;
+        width:80%;
+        display: block;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-align: center;
+        margin-top:38px;
+        z-index: 3;
+        line-height: 40px;
+        background-image: linear-gradient(-180deg, #FC8E45 0%, #F85F4D 100%);
+        border-radius: 8px;
+    }
+    .fx_tiaojian{
+        position: relative;
+        top:-300px;
+        font-family: PingFang-SC-Regular;
+        font-size: 12px;
+        letter-spacing: 0.67px;
+        padding: 10px 15px 10px 15px;
+        height:0px;
+    }
+    .fx_weizhi{
+        height:286px;
+        overflow: auto;
+        font-family: PingFangSC-Semibold;
+    }
+    .fx_yun{
+        width:100%;
+        margin: 0 auto;
+        z-index: 2;
+        position: relative;
+        top: -294px;
+        display: block;
+    }
+    /* 以下为实现圆角渐变色边框*/
+    .border{
+        position: relative;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        background:#ffffff;
+        background-clip: padding-box;
+        padding: 10px;
+    }
+    .border::after{
+        position: absolute;
+        top: -2px; bottom: -2px;
+        left: -2px; right: -2px;
+        background: linear-gradient(#fc8d45, #f8604d);
+        content: '';
+        z-index: -1;
+        border-radius: 4px;
+    }
+
+
+
+    /* 以下为兼容不同宽度*/
+    /* 宽度950-1441*/
+    @media (max-width:1441px){
+        .fx_yaoqingma{
+            margin-top:180px
+        }
+    }
+    /* 宽度750-950*/
+    @media (max-width:950px){
+        .fx_yaoqingma{
+            margin-top:120px
+        }
+        .fx_weizhi{
+            height:246px;
+        }
+        .fx_yun{
+            top: -254px;
+        }
+        .fx_tiaojian{;
+            top:-260px;
+        }
+    }
+    /* 宽度550-750*/
+    @media (max-width:750px){
+        .fx_yaoqingma{
+            margin-top:95px
+        }
+        .fx_weizhi{
+            height:226px;
+        }
+        .fx_yun{
+            top: -234px;
+        }
+        .fx_tiaojian{
+            top:-240px;
+        }
+    }
+
+    /* 宽度450-550*/
+    @media (max-width:550px){
+        .fx_yaoqingma{
+            margin-top:65px
+        }
+        .fx_weizhi{
+            height:196px;
+        }
+        .fx_yun{
+            position: relative;
+            top: -204px;
+        }
+        .fx_tiaojian{
+            top:-210px;
+        }
+    }
+
+    /* 宽度380-450*/
+    @media (max-width:450px){
+        .fx_yaoqingma{
+            margin-top:40px
+        }
+        .fx_weizhi{
+            height:176px;
+        }
+        .fx_yun{
+            top: -184px;
+        }
+        .fx_tiaojian{
+            top:-190px;
+        }
+    }
+
+    /* 宽度350-380*/
+    @media (max-width:380px){
+        .fx_yaoqingma{
+            margin-top:35px
+        }
+        .fx_weizhi{
+            height:166px;
+        }
+        .fx_yun{
+            top: -174px;
+        }
+        .fx_tiaojian{
+            top:-180px;
+        }
+    }
+
+
+
+    /* 宽度335-350*/
+    @media (max-width:350px){
+        .fx_yaoqingma{
+            margin-top:30px
+        }
+        .fx_weizhi{
+            height:166px;
+        }
+        .fx_yun{
+            top: -174px;
+        }
+        .fx_tiaojian{
+            top:-180px;
+        }
+    }
+
+
+    /* 宽度335以下*/
+    @media (max-width:335px){
+        .fx_yaoqingma{
+            margin-top:25px
+        }
+        .fx_weizhi{
+            height:156px;
+        }
+        .fx_yun{
+            top: -164px;
+        }
+        .fx_tiaojian{
+            top:-170px;
+        }
+
+    }
     </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="aui-bar aui-bar-nav">
-    <!--<a class="aui-pull-left aui-btn">-->
-    <!--<span class="style-back-icon">-->
-    <!--<img src="image/back.png" />-->
-    <!--</span>-->
-    <!--</a>-->
-    <div class="aui-title">邀请好友，双方有礼</div>
-</header>
-<section class="aui-content-padded">
-    <div class="style-content-image" id="image">
-        <img src="./image/set.png"/>
+<div class="fx_page">
+    <!-- 页面顶部图片 -->
+    <div class="fx_top">邀请好友，双方有礼</div>
+    <!-- 动手图片 -->
+    <div style="margin-top:18px"><img src="image/dongshou.png" style="width:74%;margin-left:15%;"></div>
+    <!-- 流程图片 -->
+    <div style="margin-top:45px"><img src="image/xing.png" style="width:75%;margin: 0 auto;"></div>
+
+        <div class="fx_weizhi">
+            <!-- 邀请码 -->
+            <div class="fx_yaoqingma">
+                <!-- 渐变色边框 -->
+                <div class="border"   id="data"></div>
+            </div>
+            <!-- 邀请码按钮 -->
+            <buttom class="fx_fuzhi" id="button"  data-clipboard-action="copy" data-clipboard-target="#data">复制邀请码</buttom>
+        </div>
+    <!-- 背景 -->
+        <img src="image/yun.png" class="fx_yun">
+    <!-- 页面底部文字 -->
+    <div class="fx_tiaojian">
+        <p>领取条件：</p>
+        <p>1.您须为首次登陆24小时以内的新用户</p>
+        <p>2.每位用户仅有一次邀请码使用权，不可叠加其他好友的邀请码</p>
     </div>
-    <span class="style-frame" id="data"></span>
-    <button class="aui-btn aui-btn-danger aui-btn-block" id="button" data-clipboard-action="copy"
-            data-clipboard-target="#data">复制邀请码
-    </button>
-</section>
-<div style="height:4.16rem;"></div>
-<footer id="footer">
-    <div class="aui-tips aui-row" onclick="download()">
-        <div class="aui-col-xs-2">
-            <img src="./image/app.png"/>
+    <!-- app下载 -->
+    <footer id="footer">
+        <div class="aui-tips aui-row" onclick="download()">
+            <div class="aui-col-xs-2">
+                <img src="./image/app.png"/>
+            </div>
+            <div class="aui-col-xs-5 footer-center">
+                <div class="aui-font-size-14 footer-text-margin-l-5">美景听听App</div>
+                <div class="aui-font-size-12 footer-text-margin-l-5">全球景点中文语音讲解</div>
+            </div>
+            <div class="aui-col-xs-5 style-text-open footer-right">
+                <img src="./image/open.png"/>
+            </div>
         </div>
-        <div class="aui-col-xs-5 footer-center">
-            <div class="aui-font-size-14 footer-text-margin-l-5">美景听听—<span
-                    class="aui-font-size-12 aui-margin-l-5">达人说</span></div>
-            <div class="aui-font-size-12 footer-text-margin-l-5">让旅行更有内涵</div>
-        </div>
-        <div class="aui-col-xs-5 style-text-open footer-right">
-            <img src="./image/open.png"/>
-        </div>
-    </div>
-</footer>
+    </footer>
+</div>
 </body>
 <script type="text/javascript" src="./script/jquery.min.js"></script>
 <script type="text/javascript" src="./script/api.js"></script>
